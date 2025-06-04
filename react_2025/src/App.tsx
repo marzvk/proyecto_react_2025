@@ -7,54 +7,56 @@ import Navbar from "./components/Navbar.tsx";
 function App() {
   return (
     <>
-      < Navbar/>
+      <Navbar />
       <img className="logo" src="/logoo.png" alt="logo inicio" />
       <div className="contenido">
         <div className="ultima-visita">
-         {Respuesta.slice(0,1).map((categoria) => (
-        <ProductCardContainer title={categoria.categoryTitle}>
-          {categoria.producto.map((prod) => (
-            <FrontShowElement
-              key={prod.id}
-              src={prod.src}
-              title={prod.title}
-              precio={prod.precio}
-              ubicacion={prod.ubicacion}
-              cuotas={prod.cuotas}
-              anio={prod.anio}
-              descuento={prod.descuento}
-              km={prod.km}
-              envio={prod.envio}
-            />
+          {Respuesta.slice(0, 1).map((categoria) => (
+            <ProductCardContainer title={categoria.categoryTitle}>
+              {categoria.producto.map((prod) => (
+                <FrontShowElement
+                  key={prod.id}
+                  src={prod.src}
+                  title={prod.title}
+                  precio={prod.precio}
+                  ubicacion={prod.ubicacion}
+                  cuotas={prod.cuotas}
+                  anio={prod.anio}
+                  descuento={prod.descuento}
+                  km={prod.km}
+                  envio={prod.envio}
+                />
+              ))}
+            </ProductCardContainer>
           ))}
-        </ProductCardContainer>
-      ))}
+        </div>
+
+        <img
+          className="padel"
+          src="imagenes/padel.png"
+          alt="semana del padel"
+        />
+
+        {Respuesta.slice(1).map((categoria) => (
+          <ProductCardContainer title={categoria.categoryTitle}>
+            {categoria.producto.map((prod) => (
+              <FrontShowElement
+                key={prod.id}
+                src={prod.src}
+                title={prod.title}
+                precio={prod.precio}
+                ubicacion={prod.ubicacion}
+                cuotas={prod.cuotas}
+                anio={prod.anio}
+                descuento={prod.descuento}
+                km={prod.km}
+                envio={prod.envio}
+              />
+            ))}
+          </ProductCardContainer>
+        ))}
       </div>
-     
-      
-      <img className="padel" src="imagenes/padel.png" alt="semana del padel" />
-      
-      {Respuesta.slice(1).map((categoria) => (
-        <ProductCardContainer title={categoria.categoryTitle}>
-          {categoria.producto.map((prod) => (
-            <FrontShowElement
-              key={prod.id}
-              src={prod.src}
-              title={prod.title}
-              precio={prod.precio}
-              ubicacion={prod.ubicacion}
-              cuotas={prod.cuotas}
-              anio={prod.anio}
-              descuento={prod.descuento}
-              km={prod.km}
-              envio={prod.envio}
-            />
-          ))}
-        </ProductCardContainer>
-      ))}
-    
-      </div>
-      </>
+    </>
   );
 }
 

@@ -21,39 +21,39 @@ const Respuesta: Response[] = [
     categoryTitle: "Basado en tu ultima visita",
     producto: [
       {
-        id:13,
+        id: 13,
         src: "public/imagenes/lastview/reloj_xiaomi.webp",
         title: "Smartwatch xioami",
         precio: 88899,
         envio: "Envio gratis",
-        descuento: 38
+        descuento: 38,
       },
       {
-        id:14,
+        id: 14,
         src: "public/imagenes/lastview/vespa.webp",
         title: "Vespa vxl 150\n Opotunidad",
         precio: 5250000,
-        anio:"2025",
-        km:100,
-        ubicacion:"La Plata - Bs As"
+        anio: "2025",
+        km: 100,
+        ubicacion: "La Plata - Bs As",
       },
       {
-        id:15,
+        id: 15,
         src: "public/imagenes/lastview/tornado.webp",
-        title:"Honda Tornado 250",
+        title: "Honda Tornado 250",
         precio: 7900000,
-        anio:"2020",
+        anio: "2020",
         km: 625,
-        ubicacion:"San Luis - San Luis"
+        ubicacion: "San Luis - San Luis",
       },
       {
-        id:16,
+        id: 16,
         src: "public/imagenes/lastview/auric.webp",
         title: "Auricular Logitech Pro 3",
         precio: 62500,
-        descuento:22,
-        cuotas:9,
-        envio:"Envio Gratis"
+        descuento: 22,
+        cuotas: 9,
+        envio: "Envio Gratis",
       },
       {
         id: 17,
@@ -61,17 +61,17 @@ const Respuesta: Response[] = [
         title: "Zapatillas Urbanas Topper",
         precio: 49899,
         descuento: 7,
-        cuotas:6,
-        envio: "Envio Gratis"
+        cuotas: 6,
+        envio: "Envio Gratis",
       },
-         {
+      {
         id: 18,
         src: "public/imagenes/lastview/star.webp",
         title: "Suplemento Star creatine",
         precio: 52477,
         descuento: 51,
-        cuotas:6,
-        envio:"Envio Gratis"
+        cuotas: 6,
+        envio: "Envio Gratis",
       },
     ],
   },
@@ -198,11 +198,11 @@ const Respuesta: Response[] = [
         precio: 23990,
       },
     ],
-  },  
+  },
   {
     categoryTitle: "Elegidos para vos en Autos , Motos y otros",
     producto: [
-         {
+      {
         id: 19,
         src: "/imagenes/autos/xr.webp",
         title: "Xr 190 Patentada",
@@ -211,16 +211,16 @@ const Respuesta: Response[] = [
         km: 12,
         ubicacion: "Capital Federal",
       },
-         {
+      {
         id: 20,
         src: "/imagenes/autos/nc700.webp",
         title: "Honda NC 700 Impecable",
-        precio:14500000,
+        precio: 14500000,
         anio: "2017",
         km: 21500,
-        ubicacion:"Avellaneda - Bs As",
+        ubicacion: "Avellaneda - Bs As",
       },
-           {
+      {
         id: 21,
         src: "/imagenes/autos/trailb.webp",
         title: "Trailblazer Nueva",
@@ -229,7 +229,7 @@ const Respuesta: Response[] = [
         km: 50,
         ubicacion: "pilar - Bs As",
       },
-           {
+      {
         id: 22,
         src: "/imagenes/autos/note.webp",
         title: "Nissan Note 1.6 Exclusive 110cv",
@@ -238,7 +238,7 @@ const Respuesta: Response[] = [
         km: 121000,
         ubicacion: "Resistencia - Chaco",
       },
-           {
+      {
         id: 23,
         src: "/imagenes/autos/aut5.webp",
         title: "Gilera Unica",
@@ -247,7 +247,7 @@ const Respuesta: Response[] = [
         km: 500,
         ubicacion: "Chacabucho - Chaco",
       },
-           {
+      {
         id: 24,
         src: "/imagenes/autos/ducati.webp",
         title: "Ducati Panigale",
@@ -261,39 +261,39 @@ const Respuesta: Response[] = [
   {
     categoryTitle: "Pelea contra el frio",
     producto: [
-        {
+      {
         id: 25,
         src: "imagenes/ropa/calov2.webp",
         title: "Estufa Caloventor Electrica 400w Portatil",
         precio: 23968,
-        descuento:4,
-        envio:'Gratis'
+        descuento: 4,
+        envio: "Gratis",
       },
-        {
+      {
         id: 26,
         src: "imagenes/ropa/chaleco.webp",
         title: "cCCCCcccampera",
-        precio:175840 ,
+        precio: 175840,
       },
-        {
+      {
         id: 27,
-        src:"imagenes/ropa/chalec.webp" ,
+        src: "imagenes/ropa/chalec.webp",
         title: "Chaleco montania",
         precio: 78400,
       },
-        {
-        id:28 ,
-        src:"imagenes/ropa/calov.webp" ,
+      {
+        id: 28,
+        src: "imagenes/ropa/calov.webp",
         title: "Calefactor electrnux",
-        precio:24870,
+        precio: 24870,
       },
-        {
+      {
         id: 29,
-        src:"imagenes/ropa/camper.webp",
+        src: "imagenes/ropa/camper.webp",
         title: "campera termica river",
         precio: 58740,
       },
-        {
+      {
         id: 30,
         src: "imagenes/ropa/boina.webp",
         title: "boina cuero",
@@ -304,45 +304,44 @@ const Respuesta: Response[] = [
   {
     categoryTitle: "Volve a entrenar",
     producto: [
-   {
-    id: 31,
-    src: "imagenes/ropa/zap.jpg",
-    title: "Zapatillas Running Adidas Hombre",
-    precio: 45999,
-  },
-  {
-    id: 32,
-    src: "imagenes/ropa/zap.webp",
-    title: "Remera Deportiva Dry-Fit Nike",
-    precio: 22999,
-  },
-  {
-    id: 33,
-    src: "imagenes/ropa/zap.jpg",
-    title: "Pelota de Fútbol Profesional N°5",
-    precio: 18999,
-  },
-  {
-    id: 34,
-    src: "imagenes/ropa/boina.webp",
-    title: "Guantes de Boxeo Everlast 12oz",
-    precio: 34999,
-  },
-  {
-    id: 35,
-    src:"imagenes/ropa/remm.jpg",
-    title: "Short Deportivo Puma Hombre",
-    precio: 15999,
-  },
-  {
-    id: 36,
-    src: "imagenes/ropa/rem.jpg",
-    title: "Botella Térmica Deportiva 750ml",
-    precio: 9999,
-  },
+      {
+        id: 31,
+        src: "imagenes/ropa/zap.jpg",
+        title: "Zapatillas Running Adidas Hombre",
+        precio: 45999,
+      },
+      {
+        id: 32,
+        src: "imagenes/ropa/zap.webp",
+        title: "Remera Deportiva Dry-Fit Nike",
+        precio: 22999,
+      },
+      {
+        id: 33,
+        src: "imagenes/ropa/zap.jpg",
+        title: "Pelota de Fútbol Profesional N°5",
+        precio: 18999,
+      },
+      {
+        id: 34,
+        src: "imagenes/ropa/boina.webp",
+        title: "Guantes de Boxeo Everlast 12oz",
+        precio: 34999,
+      },
+      {
+        id: 35,
+        src: "imagenes/ropa/remm.jpg",
+        title: "Short Deportivo Puma Hombre",
+        precio: 15999,
+      },
+      {
+        id: 36,
+        src: "imagenes/ropa/rem.jpg",
+        title: "Botella Térmica Deportiva 750ml",
+        precio: 9999,
+      },
     ],
   },
 ];
 
 export default Respuesta;
-

@@ -1,12 +1,10 @@
 .card {
-    border-radius: 8px;
-    
+  border-radius: 8px;
 }
 
 .titulo {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 16px;
-
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 16px;
 }
 
 .img {
@@ -14,7 +12,8 @@
   height: 195px;
   object-fit: cover;
 }
-.envio, .desc{
+.envio,
+.desc {
   color: rgb(56, 156, 61);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }

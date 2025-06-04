@@ -20,7 +20,7 @@ function FrontShowElement(props: ProductCardProps) {
     precio,
     cuotas = 0,
     ubicacion,
-    anio ,
+    anio,
     descuento = 0,
     envio,
     km,

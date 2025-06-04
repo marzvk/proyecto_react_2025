@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import styles from './ProductCardContainer.module.css'
+import styles from "./ProductCardContainer.module.css";
 
 type ProductCardContainerProps = {
   title: string;
