@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import FrontShowElement from "./components/ProductCard.tsx";
+import ProductCardContainer from "./components/ProductCardContainer.tsx";
+import Respuesta from "./components/Response.tsx";
+import Navbar from "./components/Navbar.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Navbar />
+      <img className="logo" src="/logoo.png" alt="logo inicio" />
+      <div className="contenido">
+        <div className="ultima-visita">
+          {Respuesta.slice(0, 1).map((categoria) => (
+            <ProductCardContainer title={categoria.categoryTitle}>
+              {categoria.producto.map((prod) => (
+                <FrontShowElement
+                  key={prod.id}
+                  src={prod.src}
+                  title={prod.title}
+                  precio={prod.precio}
+                  ubicacion={prod.ubicacion}
+                  cuotas={prod.cuotas}
+                  anio={prod.anio}
+                  descuento={prod.descuento}
+                  km={prod.km}
+                  envio={prod.envio}
+                />
+              ))}
+            </ProductCardContainer>
+          ))}
+        </div>
+
+        <img
+          className="padel"
+          src="imagenes/padel.png"
+          alt="semana del padel"
+        />
+
+        {Respuesta.slice(1).map((categoria) => (
+          <ProductCardContainer title={categoria.categoryTitle}>
+            {categoria.producto.map((prod) => (
+              <FrontShowElement
+                key={prod.id}
+                src={prod.src}
+                title={prod.title}
+                precio={prod.precio}
+                ubicacion={prod.ubicacion}
+                cuotas={prod.cuotas}
+                anio={prod.anio}
+                descuento={prod.descuento}
+                km={prod.km}
+                envio={prod.envio}
+              />
+            ))}
+          </ProductCardContainer>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,56 @@
+.naveg {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(229, 243, 37);
+  color: rgb(8, 0, 0);
+  /* display: block; */
+  padding: 0;
+  margin: 0;
+  height: 100px;
+}
+.superior {
+  margin: 12 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  height: 45px;
+  transform: translateX(45px);
+  padding-top: 5px;
+}
+.buscador {
+  width: 400px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-top: 3px;
+  margin-left: 150px;
+  transform: translateX(-350px);
+  border: 1px solid black;
+}
+input::placeholder {
+  background-color: rgb(255, 255, 255);
+  color: #110404;
+  opacity: 1;
+  padding: 20px 12px;
+}
+.lista {
+  display: flex;
+  color: rgb(0, 0, 0);
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listText {
+  padding-top: 20px;
+}
+.carrito {
+  width: 25px;
+  height: 25px;
+  padding-top: 18px;
+}
