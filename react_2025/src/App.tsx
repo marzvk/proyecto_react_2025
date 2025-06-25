@@ -3,11 +3,19 @@ import FrontShowElement from "./components/ProductCard.tsx";
 import ProductCardContainer from "./components/ProductCardContainer.tsx";
 import Respuesta from "./components/Response.tsx";
 import Navbar from "./components/Navbar.tsx";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const sumar1 = () => setCount((prev) => prev + 1);
+  const restar1 = () => setCount((prev) => (prev > 0 ? prev - 1 : 0));
+
+
+
   return (
     <>
-      <Navbar />
+      <Navbar count={count} />
       <img className="logo" src="/logoo.png" alt="logo inicio" />
       <div className="contenido">
         <div className="ultima-visita">
@@ -25,6 +33,9 @@ function App() {
                   descuento={prod.descuento}
                   km={prod.km}
                   envio={prod.envio}
+                  agregar={sumar1}
+                  quitar={restar1}
+
                 />
               ))}
             </ProductCardContainer>
@@ -51,6 +62,8 @@ function App() {
                 descuento={prod.descuento}
                 km={prod.km}
                 envio={prod.envio}
+                agregar={sumar1}
+                quitar={restar1}
               />
             ))}
           </ProductCardContainer>

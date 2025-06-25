@@ -1,6 +1,10 @@
 import styles from "./Navbar.module.css";
 
-function Navbar() {
+type NavbarProps = {
+  count: number;
+}
+
+function Navbar({ count }: NavbarProps) {
   return (
     <nav className={styles.naveg}>
       <div className={styles.superior}>
@@ -16,7 +20,7 @@ function Navbar() {
             className={styles.carrito}
             src="/icons8-carrito-de-compras-50.png"
             alt=""
-          />
+          />{count}
         </li>
       </ul>
     </nav>
