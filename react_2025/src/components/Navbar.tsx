@@ -2,14 +2,20 @@ import styles from "./Navbar.module.css";
 
 type NavbarProps = {
   count: number;
+  filter: string;
+  onSearch: (value: string) => void;
 }
 
-function Navbar({ count }: NavbarProps) {
+function Navbar({ count, filter, onSearch }: NavbarProps) {
   return (
     <nav className={styles.naveg}>
       <div className={styles.superior}>
         <img src="/logop.png" alt="" className={styles.logo} />
-        <input type="text" placeholder="Buscar" className={styles.buscador} />
+        <input type="text"
+          placeholder="Buscar"
+          className={styles.buscador}
+          value= {filter}
+          onChange={(event) => onSearch(event.target.value)}/>
       </div>
       <ul className={styles.lista}>
         <li className={styles.listText}>Categorias</li>

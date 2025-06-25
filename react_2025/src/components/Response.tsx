@@ -22,7 +22,7 @@ const Respuesta: Response[] = [
     producto: [
       {
         id: 13,
-        src: "public/imagenes/lastview/reloj_xiaomi.webp",
+        src: "/imagenes/lastview/reloj_xiaomi.webp",
         title: "Smartwatch xioami",
         precio: 88899,
         envio: "Envio gratis",
@@ -30,7 +30,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 14,
-        src: "public/imagenes/lastview/vespa.webp",
+        src: "/imagenes/lastview/vespa.webp",
         title: "Vespa vxl 150\n Opotunidad",
         precio: 5250000,
         anio: "2025",
@@ -39,7 +39,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 15,
-        src: "public/imagenes/lastview/tornado.webp",
+        src: "/imagenes/lastview/tornado.webp",
         title: "Honda Tornado 250",
         precio: 7900000,
         anio: "2020",
@@ -48,7 +48,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 16,
-        src: "public/imagenes/lastview/auric.webp",
+        src: "/imagenes/lastview/auric.webp",
         title: "Auricular Logitech Pro 3",
         precio: 62500,
         descuento: 22,
@@ -57,7 +57,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 17,
-        src: "public/imagenes/lastview/zapa_topper.webp",
+        src: "/imagenes/lastview/zapa_topper.webp",
         title: "Zapatillas Urbanas Topper",
         precio: 49899,
         descuento: 7,
@@ -66,7 +66,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 18,
-        src: "public/imagenes/lastview/star.webp",
+        src: "/imagenes/lastview/star.webp",
         title: "Suplemento Star creatine",
         precio: 52477,
         descuento: 51,
@@ -80,7 +80,7 @@ const Respuesta: Response[] = [
     producto: [
       {
         id: 1,
-        src: "public/imagenes/autos/aut1.jpg",
+        src: "/imagenes/autos/aut1.jpg",
         title: "Toyota Corolla",
         precio: 14500000,
         descuento: 10,
@@ -91,7 +91,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 2,
-        src: "public/imagenes/autos/aut5.webp",
+        src: "/imagenes/autos/aut5.webp",
         title: "Honda Civic",
         precio: 15800000,
         descuento: 5,
@@ -102,7 +102,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 3,
-        src: "public/imagenes/autos/aut4.jpg",
+        src: "/imagenes/autos/aut4.jpg",
         title: "Ford Focus",
         precio: 13200000,
         anio: "2018",
@@ -112,7 +112,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 4,
-        src: "public/imagenes/autos/aut2.jpg",
+        src: "/imagenes/autos/aut2.jpg",
         title: "Chevrolet Cruze",
         precio: 14800000,
         descuento: 7,
@@ -123,7 +123,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 5,
-        src: "public/imagenes/autos/aut.jpg",
+        src: "/imagenes/autos/aut.jpg",
         title: "Volkswagen Golf",
         precio: 13800000,
         anio: "2017",
@@ -133,7 +133,7 @@ const Respuesta: Response[] = [
       },
       {
         id: 6,
-        src: "public/imagenes/autos/aut5.webp",
+        src: "/imagenes/autos/aut5.webp",
         title: "Renault Mégane",
         precio: 11600000,
         descuento: 3,
@@ -148,8 +148,8 @@ const Respuesta: Response[] = [
     categoryTitle: "Lo mas vendido",
     producto: [
       {
-        id: 1,
-        src: "public/imagenes/accesorios_celu/accesorio1.png",
+        id: 7,
+        src: "/imagenes/accesorios_celu/accesorio1.png",
         title: "Funda Antigolpe Ring Soporte Para Xiaomi Poco",
         precio: 11540,
         cuotas: 12,
@@ -158,8 +158,8 @@ const Respuesta: Response[] = [
         envio: "Envío gratis",
       },
       {
-        id: 2,
-        src: "public/imagenes/accesorios_celu/accesorio2.png",
+        id: 8,
+        src: "/imagenes/accesorios_celu/accesorio2.png",
         title: "Smartwatch Xiaomi Redmi Watch 5 Lite Amoled",
         precio: 88899,
         descuento: 5,
@@ -167,8 +167,8 @@ const Respuesta: Response[] = [
         envio: "Retiro en sucursal",
       },
       {
-        id: 3,
-        src: "public/imagenes/accesorios_celu/accesorio3.png",
+        id: 9,
+        src: "/imagenes/accesorios_celu/accesorio3.png",
         title: "FFunda Poco X6 Pro Camshield Pro Caseme",
         precio: 16500,
         cuotas: 6,
@@ -176,8 +176,8 @@ const Respuesta: Response[] = [
         envio: "Envío a todo el país",
       },
       {
-        id: 4,
-        src: "public/imagenes/accesorios_celu/accesorio4.png",
+        id: 10,
+        src: "/imagenes/accesorios_celu/accesorio4.png",
         title: "Funda Poco X6 Pro Camshield Pro Caseme",
         precio: 9115,
 
@@ -185,15 +185,15 @@ const Respuesta: Response[] = [
         anio: "2021",
       },
       {
-        id: 5,
-        src: "public/imagenes/accesorios_celu/accesorio5.png",
+        id: 11,
+        src: "/imagenes/accesorios_celu/accesorio5.png",
         title: "Reloj Inteligente Hombre Gps Satelital Sumergible",
         precio: 103700,
         cuotas: 12,
       },
       {
-        id: 6,
-        src: "public/imagenes/accesorios_celu/accesorio6.png",
+        id: 12,
+        src: "/imagenes/accesorios_celu/accesorio6.png",
         title: "Funda Antigolpe + Hidrogel Matte Para Xiaomi",
         precio: 23990,
       },
