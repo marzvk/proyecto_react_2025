@@ -8,6 +8,7 @@ import { useState } from "react";
 function App() {
   const [count, setCount] = useState(0);
   const [filtro, setFiltro] = useState("");
+  const [categoriaElegida, setCategoriaElegida] = useState("")
 
   const sumar1 = () => setCount((prev) => prev + 1);
   const restar1 = () => setCount((prev) => (prev > 0 ? prev - 1 : 0));
@@ -24,10 +25,24 @@ function App() {
     )
   );
 
+  const productos = Respuesta.flatMap(
+    (cat) => cat.producto)
+
+  const categorias = Array.from(new Set(productos.map((prod) =>
+    prod.categoria)))
+
+  const categoriaFiltrada = categoriaElegida ?
+    productos.filter((p) => p.categoria === categoriaElegida) :
+    [];
+  console.log(categorias);
+  console.log(categoriaFiltrada);
+  console.log("Categoria elegida en app: ", categoriaElegida);
+
+
 
   return (
     <>
-      <Navbar count={count} filter={filtro} onSearch={handleSearch} />
+      <Navbar count={count} filter={filtro} onSearch={handleSearch} categoria={categorias} selecCategoria = {setCategoriaElegida} />
       <img className="logo" src="/logoo.png" alt="logo inicio" />
       {filtro ? (
         <ProductCardContainer title="Resultados de búsqueda">

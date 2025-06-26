@@ -1,12 +1,24 @@
 import styles from "./Navbar.module.css";
+import { useState } from "react";
 
 type NavbarProps = {
   count: number;
   filter: string;
   onSearch: (value: string) => void;
+  categoria: string[];
+  selecCategoria: (categoria: string) => void;
+
 }
 
-function Navbar({ count, filter, onSearch }: NavbarProps) {
+function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarProps) {
+  
+  const [mostrarCategorias, setMostrarCategorias] = useState(false);
+  const showCategoria = () => {
+    setMostrarCategorias(!mostrarCategorias);
+    
+  }
+
+
   return (
     <nav className={styles.naveg}>
       <div className={styles.superior}>
@@ -14,11 +26,38 @@ function Navbar({ count, filter, onSearch }: NavbarProps) {
         <input type="text"
           placeholder="Buscar"
           className={styles.buscador}
-          value= {filter}
-          onChange={(event) => onSearch(event.target.value)}/>
+          value={filter}
+          onChange={(event) => onSearch(event.target.value)} />
       </div>
       <ul className={styles.lista}>
-        <li className={styles.listText}>Categorias</li>
+
+        <li className={styles.listText}>
+          <button onClick={showCategoria}>
+            Categorias
+          </button>
+
+           {mostrarCategorias && (
+            <ul >
+              {categoria.map((cat) => (
+                <li key={cat}>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      selecCategoria(cat);
+                      setMostrarCategorias(false);
+                    }}
+                  >
+                    {cat}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+
+
+          </li>
+
         <li className={styles.listText}>Ofertas</li>
         <li className={styles.listText}>Registrate</li>
         <li>
