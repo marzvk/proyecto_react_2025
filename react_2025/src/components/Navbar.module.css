@@ -54,3 +54,24 @@ input::placeholder {
   height: 25px;
   padding-top: 18px;
 }
+.cantidad {
+  margin-left: 5px;
+  color: tomato;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.3);
+}
+.botonCategorias {  
+  background-color: transparent;
+  color: rgb(8, 0, 0);
+  border: none;
+  padding: 2px 15px 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+.botonCategorias:hover {
+  background-color: rgb(229, 243, 37);
+  border: 1px solid rgb(8, 0, 0);
+  color: rgb(8, 0, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

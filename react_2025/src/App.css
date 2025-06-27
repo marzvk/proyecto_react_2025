@@ -34,3 +34,17 @@ body {
 .ultima-visita {
   padding-top: 30px;
 }
+.volver-inicio {
+  margin: 20px auto;
+  margin-bottom: 45px;
+  padding: 10px 20px;
+  background-color: #6e6b6b;
+  color: #312626;
+  border: 2px solid #1b0707;
+}
+.resultados-busqueda {
+  margin: 20px auto;  
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+

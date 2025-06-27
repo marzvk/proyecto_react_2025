@@ -11,11 +11,11 @@ type NavbarProps = {
 }
 
 function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarProps) {
-  
+
   const [mostrarCategorias, setMostrarCategorias] = useState(false);
   const showCategoria = () => {
     setMostrarCategorias(!mostrarCategorias);
-    
+
   }
 
 
@@ -32,11 +32,12 @@ function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarPr
       <ul className={styles.lista}>
 
         <li className={styles.listText}>
-          <button onClick={showCategoria}>
+          <button onClick={showCategoria}
+            className={styles.botonCategorias}>
             Categorias
           </button>
 
-           {mostrarCategorias && (
+          {mostrarCategorias && (
             <ul >
               {categoria.map((cat) => (
                 <li key={cat}>
@@ -56,7 +57,7 @@ function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarPr
           )}
 
 
-          </li>
+        </li>
 
         <li className={styles.listText}>Ofertas</li>
         <li className={styles.listText}>Registrate</li>
@@ -65,7 +66,8 @@ function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarPr
             className={styles.carrito}
             src="/icons8-carrito-de-compras-50.png"
             alt=""
-          />{count}
+          />
+          <span className={styles.cantidad}>{count}</span>
         </li>
       </ul>
     </nav>
