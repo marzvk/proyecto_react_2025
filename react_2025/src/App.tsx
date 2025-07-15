@@ -34,10 +34,6 @@ function App() {
   const categoriaFiltrada = categoriaElegida ?
     productos.filter((p) => p.categoria === categoriaElegida) :
     [];
-  console.log(categorias);
-  console.log(categoriaFiltrada);
-  console.log("Categoria elegida en app: ", categoriaElegida);
-
 
 
   return (
@@ -73,23 +69,23 @@ function App() {
           </button>
 
         </>
-      ) :filtro ? (
+      ) : filtro ? (
         <div className="resultados-busqueda">
           <ProductCardContainer title="Resultados de búsqueda">
-          {productosFiltrados.length > 0 ? (
-            productosFiltrados.slice(0, 6).map((prod) => (
-              <FrontShowElement
-                key={prod.id}
-                {...prod}
-                agregar={sumar1}
-                quitar={restar1}
-              />
-            ))
-          ) : (
-            <p>No se encontraron productos.</p>
-          )}
-        </ProductCardContainer>
-        </div>        
+            {productosFiltrados.length > 0 ? (
+              productosFiltrados.slice(0, 6).map((prod) => (
+                <FrontShowElement
+                  key={prod.id}
+                  {...prod}
+                  agregar={sumar1}
+                  quitar={restar1}
+                />
+              ))
+            ) : (
+              <p>No se encontraron productos.</p>
+            )}
+          </ProductCardContainer>
+        </div>
       ) : (
         <div className="contenido">
 
