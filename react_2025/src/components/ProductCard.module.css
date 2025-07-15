@@ -17,3 +17,9 @@
   color: rgb(56, 156, 61);
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+.botonera {
+  display: flex;
+  align-items: center;     
+  justify-content: center; 
+                
+}

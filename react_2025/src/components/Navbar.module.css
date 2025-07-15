@@ -11,17 +11,20 @@
   margin: 0;
   height: 100px;
 }
+
 .superior {
   margin: 12 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   height: 45px;
   transform: translateX(45px);
   padding-top: 5px;
 }
+
 .buscador {
   width: 400px;
   padding: 4px 12px;
@@ -31,12 +34,14 @@
   transform: translateX(-350px);
   border: 1px solid black;
 }
+
 input::placeholder {
   background-color: rgb(255, 255, 255);
   color: #110404;
   opacity: 1;
   padding: 20px 12px;
 }
+
 .lista {
   display: flex;
   color: rgb(0, 0, 0);
@@ -49,8 +54,33 @@ input::placeholder {
 .listText {
   padding-top: 20px;
 }
+
 .carrito {
   width: 25px;
   height: 25px;
   padding-top: 18px;
+}
+
+.cantidad {
+  margin-left: 5px;
+  color: tomato;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.botonCategorias {
+  background-color: transparent;
+  color: rgb(8, 0, 0);
+  border: none;
+  padding: 2px 15px 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.botonCategorias:hover {
+  background-color: rgb(229, 243, 37);
+  border: 1px solid rgb(8, 0, 0);
+  color: rgb(8, 0, 0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

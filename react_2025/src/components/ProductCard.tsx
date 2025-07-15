@@ -1,5 +1,6 @@
 import styles from "./ProductCard.module.css";
 
+
 export type ProductCardProps = {
   src: string;
   title: string;
@@ -10,7 +11,12 @@ export type ProductCardProps = {
   ubicacion?: string;
   envio?: string;
   km?: number;
+  agregar?: () => void;
+  quitar?: () => void;
+  
 };
+
+
 
 // parametro props tiene el type ProductCardProps
 function FrontShowElement(props: ProductCardProps) {
@@ -24,7 +30,11 @@ function FrontShowElement(props: ProductCardProps) {
     descuento = 0,
     envio,
     km,
+    agregar,
+    quitar,
+    
   } = props;
+
   return (
     <article className={styles.card}>
       <img className={styles.img} src={src} alt="" />
@@ -38,6 +48,16 @@ function FrontShowElement(props: ProductCardProps) {
         {anio}
         {km !== undefined && ` | ${km.toLocaleString()} km`}
       </h5>
+      <div className={styles.botonera}>
+        <button className={styles.boton} onClick={quitar} >
+          -
+        </button>
+        <p>Comprar</p>
+        <button className={styles.boton} onClick={agregar}>
+          +
+        </button>
+      </div>
+     
     </article>
   );
 }

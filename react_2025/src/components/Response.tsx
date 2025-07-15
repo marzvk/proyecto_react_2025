@@ -1,6 +1,7 @@
 type Product = {
   id: number;
   src: string;
+  categoria: string;
   title: string;
   precio: number;
   cuotas?: number;
@@ -22,7 +23,8 @@ const Respuesta: Response[] = [
     producto: [
       {
         id: 13,
-        src: "public/imagenes/lastview/reloj_xiaomi.webp",
+        src: "/imagenes/lastview/reloj_xiaomi.webp",
+        categoria: "Electro",
         title: "Smartwatch xioami",
         precio: 88899,
         envio: "Envio gratis",
@@ -30,7 +32,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 14,
-        src: "public/imagenes/lastview/vespa.webp",
+        src: "/imagenes/lastview/vespa.webp",
+        categoria: "Motos",
         title: "Vespa vxl 150\n Opotunidad",
         precio: 5250000,
         anio: "2025",
@@ -39,7 +42,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 15,
-        src: "public/imagenes/lastview/tornado.webp",
+        src: "/imagenes/lastview/tornado.webp",
+        categoria: "Motos",
         title: "Honda Tornado 250",
         precio: 7900000,
         anio: "2020",
@@ -48,7 +52,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 16,
-        src: "public/imagenes/lastview/auric.webp",
+        src: "/imagenes/lastview/auric.webp",
+        categoria: "Electro",
         title: "Auricular Logitech Pro 3",
         precio: 62500,
         descuento: 22,
@@ -57,7 +62,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 17,
-        src: "public/imagenes/lastview/zapa_topper.webp",
+        src: "/imagenes/lastview/zapa_topper.webp",
+        categoria: "Ropa",
         title: "Zapatillas Urbanas Topper",
         precio: 49899,
         descuento: 7,
@@ -66,7 +72,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 18,
-        src: "public/imagenes/lastview/star.webp",
+        src: "/imagenes/lastview/star.webp",
+        categoria: "Deportes",
         title: "Suplemento Star creatine",
         precio: 52477,
         descuento: 51,
@@ -80,7 +87,8 @@ const Respuesta: Response[] = [
     producto: [
       {
         id: 1,
-        src: "public/imagenes/autos/aut1.jpg",
+        src: "/imagenes/autos/aut1.jpg",
+        categoria: "Autos",
         title: "Toyota Corolla",
         precio: 14500000,
         descuento: 10,
@@ -91,7 +99,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 2,
-        src: "public/imagenes/autos/aut5.webp",
+        src: "/imagenes/autos/aut5.webp",
+        categoria: "Autos",
         title: "Honda Civic",
         precio: 15800000,
         descuento: 5,
@@ -102,7 +111,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 3,
-        src: "public/imagenes/autos/aut4.jpg",
+        src: "/imagenes/autos/aut4.jpg",
+        categoria: "Autos",
         title: "Ford Focus",
         precio: 13200000,
         anio: "2018",
@@ -112,7 +122,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 4,
-        src: "public/imagenes/autos/aut2.jpg",
+        src: "/imagenes/autos/aut2.jpg",
+        categoria: "Autos",
         title: "Chevrolet Cruze",
         precio: 14800000,
         descuento: 7,
@@ -123,7 +134,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 5,
-        src: "public/imagenes/autos/aut.jpg",
+        src: "/imagenes/autos/aut.jpg",
+        categoria: "Autos",
         title: "Volkswagen Golf",
         precio: 13800000,
         anio: "2017",
@@ -133,7 +145,8 @@ const Respuesta: Response[] = [
       },
       {
         id: 6,
-        src: "public/imagenes/autos/aut5.webp",
+        src: "/imagenes/autos/aut5.webp",
+        categoria: "Autos",
         title: "Renault Mégane",
         precio: 11600000,
         descuento: 3,
@@ -148,8 +161,9 @@ const Respuesta: Response[] = [
     categoryTitle: "Lo mas vendido",
     producto: [
       {
-        id: 1,
-        src: "public/imagenes/accesorios_celu/accesorio1.png",
+        id: 7,
+        src: "/imagenes/accesorios_celu/accesorio1.png",
+        categoria: "Accesorios de Celulares",
         title: "Funda Antigolpe Ring Soporte Para Xiaomi Poco",
         precio: 11540,
         cuotas: 12,
@@ -158,8 +172,9 @@ const Respuesta: Response[] = [
         envio: "Envío gratis",
       },
       {
-        id: 2,
-        src: "public/imagenes/accesorios_celu/accesorio2.png",
+        id: 8,
+        src: "/imagenes/accesorios_celu/accesorio2.png",
+        categoria: "Accesorios de Celulares",
         title: "Smartwatch Xiaomi Redmi Watch 5 Lite Amoled",
         precio: 88899,
         descuento: 5,
@@ -167,8 +182,9 @@ const Respuesta: Response[] = [
         envio: "Retiro en sucursal",
       },
       {
-        id: 3,
-        src: "public/imagenes/accesorios_celu/accesorio3.png",
+        id: 9,
+        src: "/imagenes/accesorios_celu/accesorio3.png",
+        categoria: "Accesorios de Celulares",
         title: "FFunda Poco X6 Pro Camshield Pro Caseme",
         precio: 16500,
         cuotas: 6,
@@ -176,8 +192,9 @@ const Respuesta: Response[] = [
         envio: "Envío a todo el país",
       },
       {
-        id: 4,
-        src: "public/imagenes/accesorios_celu/accesorio4.png",
+        id: 10,
+        src: "/imagenes/accesorios_celu/accesorio4.png",
+        categoria: "Accesorios de Celulares",
         title: "Funda Poco X6 Pro Camshield Pro Caseme",
         precio: 9115,
 
@@ -185,15 +202,17 @@ const Respuesta: Response[] = [
         anio: "2021",
       },
       {
-        id: 5,
-        src: "public/imagenes/accesorios_celu/accesorio5.png",
+        id: 11,
+        src: "/imagenes/accesorios_celu/accesorio5.png",
+        categoria: "Accesorios de Celulares",
         title: "Reloj Inteligente Hombre Gps Satelital Sumergible",
         precio: 103700,
         cuotas: 12,
       },
       {
-        id: 6,
-        src: "public/imagenes/accesorios_celu/accesorio6.png",
+        id: 12,
+        src: "/imagenes/accesorios_celu/accesorio6.png",
+        categoria: "Accesorios de Celulares",
         title: "Funda Antigolpe + Hidrogel Matte Para Xiaomi",
         precio: 23990,
       },
@@ -205,6 +224,7 @@ const Respuesta: Response[] = [
       {
         id: 19,
         src: "/imagenes/autos/xr.webp",
+        categoria: "Motos",
         title: "Xr 190 Patentada",
         precio: 6098200,
         anio: "2025",
@@ -214,6 +234,7 @@ const Respuesta: Response[] = [
       {
         id: 20,
         src: "/imagenes/autos/nc700.webp",
+        categoria: "Motos",
         title: "Honda NC 700 Impecable",
         precio: 14500000,
         anio: "2017",
@@ -223,6 +244,7 @@ const Respuesta: Response[] = [
       {
         id: 21,
         src: "/imagenes/autos/trailb.webp",
+        categoria: "Autos",
         title: "Trailblazer Nueva",
         precio: 58200000,
         anio: "2025",
@@ -232,6 +254,7 @@ const Respuesta: Response[] = [
       {
         id: 22,
         src: "/imagenes/autos/note.webp",
+        categoria: "Autos",
         title: "Nissan Note 1.6 Exclusive 110cv",
         precio: 20200000,
         anio: "2020",
@@ -241,6 +264,7 @@ const Respuesta: Response[] = [
       {
         id: 23,
         src: "/imagenes/autos/aut5.webp",
+        categoria: "Motos",
         title: "Gilera Unica",
         precio: 42500000,
         anio: "2024",
@@ -250,6 +274,7 @@ const Respuesta: Response[] = [
       {
         id: 24,
         src: "/imagenes/autos/ducati.webp",
+        categoria: "Motos",
         title: "Ducati Panigale",
         precio: 56910000,
         anio: "2025",
@@ -264,6 +289,7 @@ const Respuesta: Response[] = [
       {
         id: 25,
         src: "imagenes/ropa/calov2.webp",
+        categoria: "Electro",
         title: "Estufa Caloventor Electrica 400w Portatil",
         precio: 23968,
         descuento: 4,
@@ -272,30 +298,35 @@ const Respuesta: Response[] = [
       {
         id: 26,
         src: "imagenes/ropa/chaleco.webp",
+        categoria: "Ropa",
         title: "cCCCCcccampera",
         precio: 175840,
       },
       {
         id: 27,
         src: "imagenes/ropa/chalec.webp",
+        categoria: "Ropa",
         title: "Chaleco montania",
         precio: 78400,
       },
       {
         id: 28,
         src: "imagenes/ropa/calov.webp",
+        categoria: "Electro",
         title: "Calefactor electrnux",
         precio: 24870,
       },
       {
         id: 29,
         src: "imagenes/ropa/camper.webp",
+        categoria: "Ropa",
         title: "campera termica river",
         precio: 58740,
       },
       {
         id: 30,
         src: "imagenes/ropa/boina.webp",
+        categoria: "Ropa",
         title: "boina cuero",
         precio: 19890,
       },
@@ -307,36 +338,42 @@ const Respuesta: Response[] = [
       {
         id: 31,
         src: "imagenes/ropa/zap.jpg",
+        categoria: "Ropa",
         title: "Zapatillas Running Adidas Hombre",
         precio: 45999,
       },
       {
         id: 32,
         src: "imagenes/ropa/zap.webp",
+        categoria: "Ropa",
         title: "Remera Deportiva Dry-Fit Nike",
         precio: 22999,
       },
       {
         id: 33,
         src: "imagenes/ropa/zap.jpg",
+        categoria: "Deportes",
         title: "Pelota de Fútbol Profesional N°5",
         precio: 18999,
       },
       {
         id: 34,
         src: "imagenes/ropa/boina.webp",
+        categoria: "Ropa",
         title: "Guantes de Boxeo Everlast 12oz",
         precio: 34999,
       },
       {
         id: 35,
         src: "imagenes/ropa/remm.jpg",
+        categoria: "Ropa",
         title: "Short Deportivo Puma Hombre",
         precio: 15999,
       },
       {
         id: 36,
         src: "imagenes/ropa/rem.jpg",
+        categoria: "Deportes",
         title: "Botella Térmica Deportiva 750ml",
         precio: 9999,
       },
