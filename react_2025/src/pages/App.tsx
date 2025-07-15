@@ -1,8 +1,8 @@
 import "./App.css";
-import FrontShowElement from "./components/ProductCard.tsx";
-import ProductCardContainer from "./components/ProductCardContainer.tsx";
-import Respuesta from "./components/Response.tsx";
-import Navbar from "./components/Navbar.tsx";
+import FrontShowElement from "../components/ProductCard.tsx";
+import ProductCardContainer from "../components/ProductCardContainer.tsx";
+import Respuesta from "../components/Response.tsx";
+import Navbar from "../components/Navbar.tsx";
 import { useState } from "react";
 
 function App() {
@@ -46,18 +46,10 @@ function App() {
           <ProductCardContainer title={`Categoria de ${categoriaElegida}`}>
             {categoriaFiltrada.slice(0, 6).map((prod) => (
               <FrontShowElement
-                key={prod.id}
-                src={prod.src}
-                title={prod.title}
-                precio={prod.precio}
-                ubicacion={prod.ubicacion}
-                cuotas={prod.cuotas}
-                anio={prod.anio}
-                descuento={prod.descuento}
-                km={prod.km}
-                envio={prod.envio}
-                agregar={sumar1}
-                quitar={restar1}
+                 key={prod.id}
+                  {...prod}
+                  agregar={sumar1}
+                  quitar={restar1}
               />
             ))}
           </ProductCardContainer>
@@ -94,18 +86,10 @@ function App() {
               <ProductCardContainer title={categoria.categoryTitle}>
                 {categoria.producto.map((prod) => (
                   <FrontShowElement
-                    key={prod.id}
-                    src={prod.src}
-                    title={prod.title}
-                    precio={prod.precio}
-                    ubicacion={prod.ubicacion}
-                    cuotas={prod.cuotas}
-                    anio={prod.anio}
-                    descuento={prod.descuento}
-                    km={prod.km}
-                    envio={prod.envio}
-                    agregar={sumar1}
-                    quitar={restar1}
+                     key={prod.id}
+                  {...prod}
+                  agregar={sumar1}
+                  quitar={restar1}
 
                   />
                 ))}
@@ -123,16 +107,8 @@ function App() {
             <ProductCardContainer title={categoria.categoryTitle}>
               {categoria.producto.map((prod) => (
                 <FrontShowElement
-                  key={prod.id}
-                  src={prod.src}
-                  title={prod.title}
-                  precio={prod.precio}
-                  ubicacion={prod.ubicacion}
-                  cuotas={prod.cuotas}
-                  anio={prod.anio}
-                  descuento={prod.descuento}
-                  km={prod.km}
-                  envio={prod.envio}
+                   key={prod.id}
+                  {...prod}
                   agregar={sumar1}
                   quitar={restar1}
                 />

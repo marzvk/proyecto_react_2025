@@ -1,7 +1,9 @@
+import { Link } from "react-router";
 import styles from "./ProductCard.module.css";
 
 
 export type ProductCardProps = {
+  id?: number;
   src: string;
   title: string;
   precio: number;
@@ -13,7 +15,7 @@ export type ProductCardProps = {
   km?: number;
   agregar?: () => void;
   quitar?: () => void;
-  
+
 };
 
 
@@ -21,6 +23,7 @@ export type ProductCardProps = {
 // parametro props tiene el type ProductCardProps
 function FrontShowElement(props: ProductCardProps) {
   const {
+    id,
     src,
     title,
     precio,
@@ -32,7 +35,7 @@ function FrontShowElement(props: ProductCardProps) {
     km,
     agregar,
     quitar,
-    
+
   } = props;
 
   return (
@@ -48,6 +51,7 @@ function FrontShowElement(props: ProductCardProps) {
         {anio}
         {km !== undefined && ` | ${km.toLocaleString()} km`}
       </h5>
+
       <div className={styles.botonera}>
         <button className={styles.boton} onClick={quitar} >
           -
@@ -57,7 +61,8 @@ function FrontShowElement(props: ProductCardProps) {
           +
         </button>
       </div>
-     
+      <Link to={`/products/${id}`}> Ver producto</Link>
+      
     </article>
   );
 }
