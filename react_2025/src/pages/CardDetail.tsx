@@ -16,16 +16,11 @@ function CardDetail() {
 
 
     return (
-        // <div>
-        //     <Link to="/products"><b><h3>Volver</h3></b></Link>
-        //     <h1>Card Detail Page</h1>
-        // </div>
-
-
+       
         <div>
             <Link to="/products"><b><h3>Volver</h3></b></Link>
             <h1>{productoEncontrado.title}</h1>
-            <img src={productoEncontrado.src} alt={productoEncontrado.title} style={{ maxWidth: '300px' }} />
+            <img src={productoEncontrado.src} alt={productoEncontrado.title} />
             <p><b>Precio:</b> ${productoEncontrado.precio}</p>
             {productoEncontrado.descuento && <p><b>Descuento:</b> {productoEncontrado.descuento}%</p>}
             {productoEncontrado.envio && <p><b>Envío:</b> {productoEncontrado.envio}</p>}

@@ -4,6 +4,7 @@ import ProductCardContainer from "../components/ProductCardContainer.tsx";
 import Respuesta from "../components/Response.tsx";
 import Navbar from "../components/Navbar.tsx";
 import { useState } from "react";
+import { Link } from "react-router";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -43,22 +44,17 @@ function App() {
 
       {categoriaFiltrada.length > 0 ? (
         <>
+          {/* <Link to="/products" className="volver-inicio">Ir al inicio</Link> */}
           <ProductCardContainer title={`Categoria de ${categoriaElegida}`}>
             {categoriaFiltrada.slice(0, 6).map((prod) => (
               <FrontShowElement
-                 key={prod.id}
-                  {...prod}
-                  agregar={sumar1}
-                  quitar={restar1}
+                key={prod.id}
+                {...prod}
+                agregar={sumar1}
+                quitar={restar1}
               />
             ))}
           </ProductCardContainer>
-          <button
-            onClick={() => setCategoriaElegida("")}
-            className="volver-inicio"
-          >
-            Volver al Inicio
-          </button>
 
         </>
       ) : filtro ? (
@@ -86,10 +82,10 @@ function App() {
               <ProductCardContainer title={categoria.categoryTitle}>
                 {categoria.producto.map((prod) => (
                   <FrontShowElement
-                     key={prod.id}
-                  {...prod}
-                  agregar={sumar1}
-                  quitar={restar1}
+                    key={prod.id}
+                    {...prod}
+                    agregar={sumar1}
+                    quitar={restar1}
 
                   />
                 ))}
@@ -107,7 +103,7 @@ function App() {
             <ProductCardContainer title={categoria.categoryTitle}>
               {categoria.producto.map((prod) => (
                 <FrontShowElement
-                   key={prod.id}
+                  key={prod.id}
                   {...prod}
                   agregar={sumar1}
                   quitar={restar1}

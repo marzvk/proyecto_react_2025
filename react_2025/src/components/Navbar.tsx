@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
 
@@ -22,7 +23,8 @@ function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarPr
   return (
     <nav className={styles.naveg}>
       <div className={styles.superior}>
-        <img src="/logop.png" alt="" className={styles.logo} />
+        <Link to="/"><img src="/logop.png" alt="" className={styles.logo} /></Link>
+        {/* <img src="/logop.png" alt="" className={styles.logo} /> */}
         <input type="text"
           placeholder="Buscar"
           className={styles.buscador}
