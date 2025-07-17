@@ -5,8 +5,12 @@ import Respuesta from "../components/Response.tsx";
 import Navbar from "../components/Navbar.tsx";
 import { useState } from "react";
 import { Link } from "react-router";
+import { useCarrito } from "./Carrito.tsx";
 
 function App() {
+  const { carrito } = useCarrito();
+  const { agregarAlCarrito } = useCarrito();
+
   const [count, setCount] = useState(0);
   const [filtro, setFiltro] = useState("");
   const [categoriaElegida, setCategoriaElegida] = useState("")
@@ -50,7 +54,7 @@ function App() {
               <FrontShowElement
                 key={prod.id}
                 {...prod}
-                agregar={sumar1}
+                agregar={() => agregarAlCarrito(prod)}
                 quitar={restar1}
               />
             ))}
@@ -65,7 +69,7 @@ function App() {
                 <FrontShowElement
                   key={prod.id}
                   {...prod}
-                  agregar={sumar1}
+                  agregar={() => agregarAlCarrito(prod)}
                   quitar={restar1}
                 />
               ))
@@ -84,7 +88,7 @@ function App() {
                   <FrontShowElement
                     key={prod.id}
                     {...prod}
-                    agregar={sumar1}
+                    agregar={() => agregarAlCarrito(prod)}
                     quitar={restar1}
 
                   />
@@ -105,7 +109,7 @@ function App() {
                 <FrontShowElement
                   key={prod.id}
                   {...prod}
-                  agregar={sumar1}
+                  agregar={() => agregarAlCarrito(prod)}
                   quitar={restar1}
                 />
               ))}

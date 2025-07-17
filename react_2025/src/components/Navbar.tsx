@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
+import { useCarrito } from "../pages/Carrito";
 
 type NavbarProps = {
   count: number;
@@ -12,6 +13,7 @@ type NavbarProps = {
 }
 
 function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarProps) {
+  const { carrito } = useCarrito();
 
   const [mostrarCategorias, setMostrarCategorias] = useState(false);
   const showCategoria = () => {
@@ -70,6 +72,7 @@ function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarPr
             alt=""
           />
           <span className={styles.cantidad}>{count}</span>
+          <Link to="/carrito">🛒 ({carrito.length})</Link>
         </li>
       </ul>
     </nav>

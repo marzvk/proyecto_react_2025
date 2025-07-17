@@ -6,22 +6,26 @@ import { StrictMode } from "react";
 import Home from "./pages/Home.tsx";
 import CardDetail from "./pages/CardDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import { CarritoProvider } from "./pages/Carrito.tsx";
+import CarritoPage from "./pages/CarritoPage.tsx";
 
 // App va con mayuscula, el llamado App
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* provider permite manejar las rutas */}
     <BrowserRouter>
-      {/* Switch de las rutas  */}
-      <Routes>
+      <CarritoProvider>
+        {/* Switch de las rutas  */}
+        <Routes>
 
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<App />} />
-        <Route path="/products/:id" element={<CardDetail />} />
-        <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<App />} />
+          <Route path="/products/:id" element={<CardDetail />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/carrito" element={<CarritoPage />} />
 
-      </Routes>
-
+        </Routes>
+      </CarritoProvider>
     </BrowserRouter>
   </StrictMode>
 );
