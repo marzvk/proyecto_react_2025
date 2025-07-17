@@ -8,9 +8,15 @@ export default function CarritoPage() {
 
     const total = carrito.reduce((acc, prod) => acc + prod.precio, 0);
 
+    //  <Record<Clave, Valor>> tipo de objeto con claves y valores específicos(
+    //   id:number, producto: Product, cantidad: number)
     const productosAgrupados = carrito.reduce<Record<number, { producto: Product, cantidad: number }>>((acc, prod) => {
+
+        // si ya hay un id asi en acc, suma 1 
         if (acc[prod.id]) {
             acc[prod.id].cantidad += 1;
+
+            // si no, crea el objeto con ese producto y cantidad 1
         } else {
             acc[prod.id] = { producto: prod, cantidad: 1 };
         }
@@ -64,9 +70,7 @@ export default function CarritoPage() {
             )}
             <Link
                 to="/"
-                className="mt-2 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-            >
-                Seguir comprando
+            >Seguir comprando
             </Link>
         </div>
     );

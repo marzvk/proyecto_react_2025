@@ -6,7 +6,7 @@ type CarritoContextType = {
   carrito: Product[];
   agregarAlCarrito: (producto: Product) => void;
   quitarDelCarrito: (productoId: number) => void;
-  vaciarCarrito: () => void; 
+  vaciarCarrito: () => void;
 };
 
 const CarritoContext = createContext<CarritoContextType | undefined>(undefined);
