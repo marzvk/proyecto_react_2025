@@ -13,8 +13,7 @@ export type ProductCardProps = {
   ubicacion?: string;
   envio?: string;
   km?: number;
-  agregar?: () => void;
-  quitar?: () => void;
+  agregar?: () => void;  
 
 };
 
@@ -34,7 +33,7 @@ function FrontShowElement(props: ProductCardProps) {
     envio,
     km,
     agregar,
-    quitar,
+    
 
   } = props;
 
@@ -52,16 +51,13 @@ function FrontShowElement(props: ProductCardProps) {
         {km !== undefined && ` | ${km.toLocaleString()} km`}
       </h5>
 
-      <div className={styles.botonera}>
-        <button className={styles.boton} onClick={quitar} >
-          -
-        </button>
+      <div className={styles.botonera}>        
         <p>Comprar</p>
         <button className={styles.boton} onClick={agregar}>
           +
         </button>
       </div>
-      <Link to={`/products/${id}`}> Ver producto</Link>
+      <Link to={`/products/${id}`}> <span className={styles.link} >Ver Productos</span></Link>
       
     </article>
   );

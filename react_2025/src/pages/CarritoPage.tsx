@@ -1,7 +1,8 @@
-import React from "react";
+
 import { useCarrito } from "./Carrito";
 import { Link } from "react-router";
 import type { Product } from "../components/Response";
+
 
 export default function CarritoPage() {
     const { carrito, quitarDelCarrito, vaciarCarrito } = useCarrito();
@@ -35,10 +36,7 @@ export default function CarritoPage() {
                         {carrito.map((prod) => (
                             <li key={prod.id}>
                                 {prod.title} - ${prod.precio}
-                                <button onClick={() => quitarDelCarrito(prod.id)}>❌ X  x Quitar</button>
-
-                                {/* VER CUAL X QUEDA EN BOTON */}
-
+                                <button onClick={() => quitarDelCarrito(prod.id)}> X  Quitar</button>
                             </li>
                         ))}
                     </ul>
@@ -57,7 +55,7 @@ export default function CarritoPage() {
                     <ul>
                         {Object.values(productosAgrupados).map(({ producto, cantidad }) => (
                             <li key={producto.id}>
-                                {producto.title} × {cantidad} — ${producto.precio * cantidad}
+                                {producto.title} x {cantidad} — ${producto.precio * cantidad}
                                 <button onClick={() => quitarDelCarrito(producto.id)}>❌</button>
                             </li>
                         ))}
@@ -72,6 +70,14 @@ export default function CarritoPage() {
                 to="/"
             >Seguir comprando
             </Link>
+
+            {total > 0 && (
+                <Link 
+                to="/success"
+                state={{totalPasado: total}}
+                onClick={vaciarCarrito} ><b>COMPRAR</b></Link>
+            )}
+            
         </div>
     );
 }

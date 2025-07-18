@@ -84,3 +84,27 @@ input::placeholder {
   color: rgb(8, 0, 0);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.carrito {
+  /* Estilos para todo el enlace del carrito */
+  font-size: 1.2em;
+  color: #333;
+  text-decoration: none;
+  display: flex; /* Ayuda a alinear el ícono y el texto */
+  align-items: center;
+  gap: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.contadorItems {
+  /* Estilos específicos para el número de ítems del carrito */
+  background-color: orange;
+  color: rgb(7, 6, 6);
+  border-radius: 50%; /* Lo hace un círculo */
+  padding: 2px 7px;
+  font-size: 0.8em; /* Un poco más pequeño que el texto padre */
+  font-weight: bold;
+  display: inline-block; /* Esencial para que el padding y el círculo funcionen */
+  min-width: 20px; /* Asegura un tamaño mínimo para un solo dígito */
+  text-align: center;
+  border: 1px solid black
+}

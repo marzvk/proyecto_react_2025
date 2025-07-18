@@ -1,0 +1,137 @@
+
+
+/* Footer.module.css */
+
+.footer {
+  background-color: #222;
+  color: #f0f0f0; 
+  padding: 40px 20px;
+  margin-top: 20px ;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid #333; 
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las secciones se envuelvan en pantallas pequeñas */
+  justify-content: space-around; /* Distribuye el espacio entre las secciones */
+  max-width: 1200px;
+  margin: 0 auto; 
+  gap: 30px; /* Espacio entre las columnas */
+}
+
+.section {
+  flex: 1; /* Permite que las secciones crezcan y se encojan */
+  min-width: 200px; /* Ancho mínimo para evitar que se aplasten demasiado */
+  margin-bottom: 20px;
+}
+
+.section h3 {
+  color: #00a650; /* Un color distintivo, similar a Mercado Libre */
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  border-bottom: 1px solid #00a650; /* Subrayado para los títulos */
+  padding-bottom: 5px;
+}
+
+.section p,
+.section ul {
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  list-style: none; /* Remueve los puntos de la lista */
+}
+
+.section ul li {
+  margin-bottom: 8px;
+}
+
+.link {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transición suave para el hover */
+}
+
+.link:hover {
+  color: #00a650; /* Cambia de color al pasar el mouse */
+  text-decoration: underline;
+}
+
+/* Redes Sociales */
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.socialIcon img {
+  width: 24px; /* Tamaño del icono */
+  height: 24px;
+  filter: invert(100%); /* Hace que los iconos negros se vean blancos en un fondo oscuro */
+  transition: transform 0.3s ease;
+}
+
+.socialIcon:hover img {
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Métodos de Pago */
+.paymentMethodsTitle {
+  margin-top: 25px;
+  color: #00a650;
+  font-size: 1.1em;
+  border-bottom: 1px solid #00a650;
+  padding-bottom: 5px;
+}
+
+.paymentMethods {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap; /* Para que los iconos se ajusten en pantallas pequeñas */
+}
+
+.paymentIcon {
+    height: 30px; /* Altura de los iconos de pago */
+    width: auto;
+}
+
+/* Barra inferior de Copyright */
+.bottomBar {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  font-size: 0.85em;
+  color: #bbb;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Apila las secciones en pantallas más pequeñas */
+    align-items: center; /* Centra el contenido en columnas */
+    text-align: center;
+  }
+
+  .section {
+    min-width: unset; /* Desactiva el min-width en móviles */
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  .section ul {
+      padding: 0; /* Asegura que la lista no tenga padding por defecto */
+  }
+
+  .socialLinks,
+  .paymentMethods {
+      justify-content: center; /* Centra los iconos */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 15px;
+  }
+}

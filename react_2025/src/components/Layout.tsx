@@ -1,86 +1,46 @@
-import { Outlet } from "react-router";
+
+import { Outlet, useNavigate } from "react-router";
 import Navbar from "../components/Navbar";
-import ProductCardContainer from "../components/ProductCardContainer";
-import FrontShowElement from "../components/ProductCard";
-import Respuesta from "../components/Response";
-import { useCarrito } from "../pages/Carrito";
 import { useState } from "react";
+import Respuesta from "../components/Response";
+import Footer from "./Footer";
+
 
 function Layout() {
-    const { agregarAlCarrito } = useCarrito();
-    const [count, setCount] = useState(0);
-    const [filtro, setFiltro] = useState("");
-    const [categoriaElegida, setCategoriaElegida] = useState("");
+  const navigate = useNavigate();
+  const [filtro, setFiltro] = useState("");
 
-    const sumar1 = () => setCount((prev) => prev + 1);
-    const restar1 = () => setCount((prev) => (prev > 0 ? prev - 1 : 0));
 
-    const handleSearch = (value: string) => {
-        setFiltro(value.toLowerCase());
-    };
+  const productos = Respuesta.flatMap((cat) => cat.producto);
+  const categorias = Array.from(new Set(productos.map((prod) => prod.categoria)));
 
-    const productos = Respuesta.flatMap((cat) => cat.producto);
-    const categorias = Array.from(new Set(productos.map((prod) => prod.categoria)));
+  const handleSearch = (value: string) => {
+    setFiltro(value);
+    navigate("/busqueda?query=" + value.toLowerCase());
+  };
 
-    const categoriaFiltrada = categoriaElegida
-        ? productos.filter((p) => p.categoria === categoriaElegida)
-        : [];
+  const handleCategoria = (categoria: string) => {
 
-    const productosFiltrados = Respuesta.flatMap((categoria) =>
-        categoria.producto.filter((prod) =>
-            prod.title.toLowerCase().includes(filtro)
-        )
-    );
+    navigate("/categoria/" + encodeURIComponent(categoria));
+  };
 
-    return (
-        <>
-            <header>HEADER</header>
+  return (
+    <>
 
-            <Navbar
-                count={count}
-                filter={filtro}
-                onSearch={handleSearch}
-                categoria={categorias}
-                selecCategoria={setCategoriaElegida}
-            />
+      <Navbar
+        filter={filtro}
+        onSearch={handleSearch}
+        categoria={categorias}
+        selecCategoria={handleCategoria}
+      />
 
-            <img className="logo" src="/logoo.png" alt="logo inicio" />
+      <main>
+        <Outlet />
+      </main>
 
-            {categoriaFiltrada.length > 0 ? (
-                <ProductCardContainer title={`Categoria de ${categoriaElegida}`}>
-                    {categoriaFiltrada.slice(0, 6).map((prod) => (
-                        <FrontShowElement
-                            key={prod.id}
-                            {...prod}
-                            agregar={() => agregarAlCarrito(prod)}
-                            quitar={restar1}
-                        />
-                    ))}
-                </ProductCardContainer>
-            ) : filtro ? (
-                <div className="resultados-busqueda">
-                    <ProductCardContainer title="Resultados de búsqueda">
-                        {productosFiltrados.length > 0 ? (
-                            productosFiltrados.slice(0, 6).map((prod) => (
-                                <FrontShowElement
-                                    key={prod.id}
-                                    {...prod}
-                                    agregar={() => agregarAlCarrito(prod)}
-                                    quitar={restar1}
-                                />
-                            ))
-                        ) : (
-                            <p>No se encontraron productos.</p>
-                        )}
-                    </ProductCardContainer>
-                </div>
-            ) : null}
-
-            <main><Outlet /></main>
-
-            <footer>El footer</footer>
-        </>
-    );
+      <Footer />
+    </>
+  );
 }
 
 export default Layout;

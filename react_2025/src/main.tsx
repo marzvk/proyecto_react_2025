@@ -9,6 +9,9 @@ import NotFound from "./pages/NotFound.tsx";
 import { CarritoProvider } from "./pages/Carrito.tsx";
 import CarritoPage from "./pages/CarritoPage.tsx";
 import Layout from "./components/Layout.tsx";
+import CategoriaPage from "./pages/CategoriaPage.tsx";
+import BusquedaPage from "./pages/BusquedaPage.tsx";
+import Success from "./pages/Success.tsx";
 
 
 // App va con mayuscula, el llamado App
@@ -25,6 +28,9 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/products/:id" element={<CardDetail />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/carrito" element={<CarritoPage />} />
+            <Route path="/categoria/:nombre" element={<CategoriaPage />} />
+            <Route path="/busqueda" element={<BusquedaPage />} />
+            <Route path="/success" element={<Success/>} />
           </Route>
         </Routes>
       </CarritoProvider>
