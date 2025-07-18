@@ -2,6 +2,8 @@
 import { useCarrito } from "./Carrito";
 import { Link } from "react-router";
 import type { Product } from "../components/Response";
+import styles from "./CarritoPage.module.css"; 
+
 
 
 export default function CarritoPage() {
@@ -25,59 +27,47 @@ export default function CarritoPage() {
     }, {});
 
     return (
-        <div>
+        <div className={styles.carritoContainer}>
             <h2>Carrito de Compras</h2>
 
             {carrito.length === 0 ? (
-                <p>No hay productos en el carrito.</p>
+                <p className={styles.emptyCartMessage}>No hay productos en el carrito.</p>
             ) : (
                 <>
-                    <ul>
-                        {carrito.map((prod) => (
-                            <li key={prod.id}>
-                                {prod.title} - ${prod.precio}
-                                <button onClick={() => quitarDelCarrito(prod.id)}> X  Quitar</button>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <h3>Total: ${total}</h3>
-
-                    <button onClick={vaciarCarrito}>🗑 Vaciar carrito</button>
-
-                </>
-            )}
-
-            {carrito.length === 0 ? (
-                <p>No hay productos en el carrito.</p>
-            ) : (
-                <>
-                    <ul>
+                    <ul className={styles.productList}>
                         {Object.values(productosAgrupados).map(({ producto, cantidad }) => (
-                            <li key={producto.id}>
+                            <li key={producto.id}
+                                className={styles.productItem}>
                                 {producto.title} x {cantidad} — ${producto.precio * cantidad}
-                                <button onClick={() => quitarDelCarrito(producto.id)}>❌</button>
+                                <button
+                                    onClick={() => quitarDelCarrito(producto.id)}
+                                    className={styles.removeButton}
+                                >❌</button>
                             </li>
                         ))}
                     </ul>
-
-                    <h3>Total: ${total}</h3>
-
-                    <button onClick={vaciarCarrito}>🗑 Vaciar carrito</button>
+                    <h3 className={styles.totalText}>Total: ${total}</h3>
+                    <button
+                        onClick={vaciarCarrito}
+                        className={styles.clearCartButton}
+                    >🗑 Vaciar carrito</button>
                 </>
             )}
             <Link
                 to="/"
+                className={styles.continueShoppingLink}
             >Seguir comprando
             </Link>
 
             {total > 0 && (
-                <Link 
-                to="/success"
-                state={{totalPasado: total}}
-                onClick={vaciarCarrito} ><b>COMPRAR</b></Link>
+                <Link
+                    to="/success"
+                    state={{ totalPasado: total }}
+                    onClick={vaciarCarrito}
+                    className={styles.buyButton}
+                ><b>COMPRAR</b></Link>
             )}
-            
+
         </div>
     );
 }

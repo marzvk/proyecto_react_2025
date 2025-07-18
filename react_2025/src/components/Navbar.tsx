@@ -40,22 +40,38 @@ function Navbar({ filter, onSearch, categoria, selecCategoria }: NavbarProps) {
           </button>
 
           {mostrarCategorias && (
-            <ul >
-              {categoria.map((cat) => (
-                <li key={cat}>
-                  <a
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      selecCategoria(cat);
-                      setMostrarCategorias(false);
-                    }}
-                  >
-                    {cat}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <ul className={styles.categoryList}> 
+          {categoria.map((cat) => (
+            <li key={cat}>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  selecCategoria(cat);
+                  setMostrarCategorias(false);
+                }}                
+              >
+                {cat}
+              </a>
+            </li>
+          ))}
+        </ul>
+            // <ul >
+            //   {categoria.map((cat) => (
+            //     <li key={cat}>
+            //       <a
+            //         href="#"
+            //         onClick={(e) => {
+            //           e.preventDefault();
+            //           selecCategoria(cat);
+            //           setMostrarCategorias(false);
+            //         }}
+            //       >
+            //         {cat}
+            //       </a>
+            //     </li>
+            //   ))}
+            // </ul>
           )}
         </li>
 

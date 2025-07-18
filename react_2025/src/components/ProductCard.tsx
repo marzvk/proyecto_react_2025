@@ -57,7 +57,7 @@ function FrontShowElement(props: ProductCardProps) {
           +
         </button>
       </div>
-      <Link to={`/products/${id}`}> <span className={styles.link} >Ver Productos</span></Link>
+      <Link to={`/products/${id}`}> <span className={styles.link} >Ver el Producto</span></Link>
       
     </article>
   );

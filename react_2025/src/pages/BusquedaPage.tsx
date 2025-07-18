@@ -5,6 +5,7 @@ import Respuesta from "../components/Response";
 import ProductCardContainer from "../components/ProductCardContainer";
 import FrontShowElement from "../components/ProductCard";
 import { useCarrito } from "./Carrito";
+import styles from "../components/ProductCard.module.css";
 
 export default function BusquedaPage() {
   const { agregarAlCarrito } = useCarrito();
@@ -19,7 +20,7 @@ export default function BusquedaPage() {
 
   return (
     <>
-    <Link to="/products" >Ver Productos</Link>
+    <Link to="/products" ><span className={styles.boton} >Volver a Productos</span></Link>
 
     {query.trim() !== "" && (
       

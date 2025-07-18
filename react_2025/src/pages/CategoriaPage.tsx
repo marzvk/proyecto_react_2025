@@ -6,6 +6,8 @@ import ProductCardContainer from "../components/ProductCardContainer";
 import FrontShowElement from "../components/ProductCard";
 import { useCarrito } from "./Carrito";
 import { Link } from "react-router";
+import styles from "../components/ProductCard.module.css";
+
 
 export default function CategoriaPage() {
   const { nombre } = useParams();
@@ -17,14 +19,13 @@ export default function CategoriaPage() {
 
   return (
     <>
-    <Link to="/products" >Volver al inicio</Link>
+    <Link to="/products" ><span className={styles.boton} >Volver al inicio</span></Link>
     <ProductCardContainer title={`Categoría: ${nombre}`}>
       {productos.slice(0, 6).map((prod) => (
         <FrontShowElement
           key={prod.id}
           {...prod}
-          agregar={() => agregarAlCarrito(prod)}
-          quitar={() => {}}
+          agregar={() => agregarAlCarrito(prod)}          
         />
       ))}
     </ProductCardContainer>    
