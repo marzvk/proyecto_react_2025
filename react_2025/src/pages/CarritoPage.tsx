@@ -30,7 +30,7 @@ export default function CarritoPage() {
         <div className={styles.carritoContainer}>
             <h2>Carrito de Compras</h2>
             <Link
-                to="/"
+                to="/products"
                 className={styles.continueShoppingLink}
             >Seguir comprando
             </Link>
@@ -51,11 +51,12 @@ export default function CarritoPage() {
                             </li>
                         ))}
                     </ul>
-                    <h3 className={styles.totalText}>Total: ${total}</h3>
-                    <button
+                      <button
                         onClick={vaciarCarrito}
                         className={styles.clearCartButton}
                     >🗑 Vaciar carrito</button>
+                    <h3 className={styles.totalText}>Total: ${total}</h3>
+                  
                 </>
             )}
             

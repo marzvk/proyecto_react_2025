@@ -20,15 +20,17 @@
 
 
 .botonera {
-  display: flex;        /* Puts "Comprar" and the button side-by-side */
+  display: flex;  
+  justify-content: center;     
   align-items: center;  /* Vertically aligns them */
-  gap: 8px;             /* A little space between them */
+  gap: 10px;             /* A little space between them */
   margin-bottom: 10px;  /* Space below this section */
 }
 
 .botonera p {
   font-size: 1em;       /* Standard text size */
   color: #333;          /* Dark gray text */
+  margin: 0;
 }
 
 .boton {
@@ -37,7 +39,7 @@
   border: 1px solid #ccc; /* Subtle light gray border */
   border-radius: 3px;     /* Slightly rounded corners */
   padding: 5px 10px;      /* Simple padding */
-  font-size: 1.1em;       /* A bit larger for the "+" sign */
+  font-size: 1em;       /* A bit larger for the "+" sign */
   cursor: pointer;        /* Indicates it's clickable */
 }
 
