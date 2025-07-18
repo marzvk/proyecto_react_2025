@@ -1,0 +1,126 @@
+
+
+
+
+.carritoContainer {
+  /* Contenedor principal del carrito */
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center; /* Centra el texto por defecto */
+}
+
+.emptyCartMessage {
+  /* Mensaje cuando el carrito está vacío */
+  font-size: 1.2em;
+  color: #777;
+  padding: 30px 0;
+}
+
+.productList {
+  /* Lista de productos en el carrito */
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0; /* Espacio debajo de la lista */
+  text-align: left; /* Alinea el texto de los ítems a la izquierda */
+}
+
+.productItem {
+  display: flex;
+  justify-content: space-between; /* Espacia el texto y el botón de eliminar */
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee; /* Separador entre ítems */
+  font-size: 1em;
+  color: #333;
+}
+
+.productItem:last-child {
+  border-bottom: none; /* Sin borde en el último ítem */
+}
+
+.removeButton {
+    color: #c82333; /* Rojo para el botón de eliminar */
+  background-color: transparent; /* Fondo transparente para el botón de eliminar */
+  border: #c82333 1px solid; /* Borde naranja */
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px; /* Pequeño padding para hacer clic más fácil */
+  transition: transform 0.2s ease;
+}
+
+.removeButton:hover {
+  transform: scale(1.1); /* Efecto sutil al pasar el mouse */
+}
+
+.totalText {
+  /* Estilo para el total */
+  font-size: 1.8em;
+  color: #000;
+  margin: 25px 0;
+  font-weight: bold;
+}
+
+.clearCartButton {
+  /* Botón "Vaciar carrito" */
+  background-color: #dc3545; /* Rojo para acción de peligro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-bottom: 20px; /* Espacio debajo del botón */
+  transition: background-color 0.2s ease;
+}
+
+.clearCartButton:hover {
+  background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+}
+
+.continueShoppingLink {
+  /* Enlace "Seguir comprando" */
+  display: inline-block; /* Para aplicar padding y margin */
+  color: #007bff; /* Azul para enlaces */
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  font-weight: normal;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-right: 15px; /* Espacio si hay otro botón al lado */
+}
+
+.continueShoppingLink:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.buyButton {
+  /* Botón "COMPRAR" */
+  display: inline-block;
+  background-color: #00a650; /* Verde distintivo para comprar */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none; /* Quitar subrayado si es un Link */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.buyButton:hover {
+  background-color: #008f44;
+  transform: translateY(-2px);
+}
+
+.buyButton:active {
+  background-color: #007a3a;
+  transform: translateY(0);
+}

@@ -1,0 +1,116 @@
+
+
+
+
+.detailContainer {
+  /* Contenedor principal de la tarjeta de detalle */
+  max-width: 800px; /* Ancho máximo para el contenido, ajústalo si es necesario */
+  margin: 40px auto; /* Centra el contenedor en la página y da espacio vertical */
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Bordes ligeramente más redondeados que una tarjeta pequeña */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #fff;
+  display: flex; /* Usamos flexbox para el layout interno */
+  flex-direction: column; /* Apilamos los elementos verticalmente */
+  align-items: center; /* Centramos el contenido horizontalmente */
+  text-align: center; /* Centra el texto por defecto */
+}
+
+.backLink {
+  /* Estilos para el enlace "Volver" */
+  align-self: flex-start; /* Alinea este elemento a la izquierda */
+  margin-bottom: 20px; /* Espacio debajo del enlace "Volver" */
+  text-decoration: none;
+  color: #007bff; /* Un azul estándar para enlaces */
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.backLink h3 {
+  margin: 0; /* Elimina el margen predeterminado del h3 */
+  display: inline; /* Asegura que el h3 se comporte como texto en línea */
+}
+
+.productImage {
+  /* Estilos para la imagen del producto */
+  max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+  max-height: 400px; /* Altura máxima de la imagen, ajústala */
+  object-fit: contain; /* Para que la imagen completa sea visible */
+  border-radius: 4px;
+  margin-bottom: 25px;
+}
+
+.productTitle {
+  /* Estilos para el título principal del producto */
+  font-size: 2em; /* Tamaño grande para el título */
+  color: #333;
+  margin: 0 0 20px 0; /* Espacio debajo del título */
+}
+
+.detailParagraph {
+  /* Estilos para todos los párrafos de detalle (precio, descuento, etc.) */
+  font-size: 1.1em;
+  color: #555;
+  margin: 8px 0; /* Espacio vertical entre los párrafos de detalle */
+  line-height: 1.4;
+}
+
+.detailParagraph b {
+  color: #333; /* Color más oscuro para el texto en negrita (etiquetas) */
+}
+
+.priceText {
+  /* Estilo específico para el precio, si quieres destacarlo */
+  font-size: 1.5em; /* Un poco más grande que otros detalles */
+  font-weight: bold;
+  color: #000; /* Negro puro para el precio */
+  margin-bottom: 15px; /* Espacio extra debajo del precio */
+}
+
+.addToCartButton {
+  /* Estilos para el botón "Agregar al carrito" */
+  background-color: #00a650; /* Un verde vibrante */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 30px; /* Espacio superior para separarlo de los detalles */
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.addToCartButton:hover {
+  background-color: #008f44;
+  transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+}
+
+.addToCartButton:active {
+  background-color: #007a3a;
+  transform: translateY(0);
+}
+
+/* Responsividad básica */
+@media (max-width: 768px) {
+  .detailContainer {
+    margin: 20px 15px; /* Menos margen en pantallas pequeñas */
+    padding: 20px;
+  }
+
+  .productTitle {
+    font-size: 1.6em;
+  }
+
+  .addToCartButton {
+    padding: 10px 20px;
+    font-size: 1.1em;
+  }
+}
