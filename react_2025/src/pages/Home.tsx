@@ -5,9 +5,9 @@ import {Link} from "react-router"
 function Home() {
   return (
     <div>
-      <h1>Welcome a tu pagina de compras</h1>
-      <p>Este es el inicio de la pagina</p>
-        <Link to="/products"><b><h2>Ingresar</h2></b></Link>
+      <h1 style={{ color: 'black' }}>Welcome a tu pagina de compras</h1>
+      <p style={{ color: 'black' }}>Este es el inicio de la pagina</p>
+        <Link to="/products"><button><h2>Ingresar</h2></button></Link>
     </div>
   );
 }

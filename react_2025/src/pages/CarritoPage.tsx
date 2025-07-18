@@ -29,6 +29,11 @@ export default function CarritoPage() {
     return (
         <div className={styles.carritoContainer}>
             <h2>Carrito de Compras</h2>
+            <Link
+                to="/"
+                className={styles.continueShoppingLink}
+            >Seguir comprando
+            </Link>
 
             {carrito.length === 0 ? (
                 <p className={styles.emptyCartMessage}>No hay productos en el carrito.</p>
@@ -53,11 +58,7 @@ export default function CarritoPage() {
                     >🗑 Vaciar carrito</button>
                 </>
             )}
-            <Link
-                to="/"
-                className={styles.continueShoppingLink}
-            >Seguir comprando
-            </Link>
+            
 
             {total > 0 && (
                 <Link
