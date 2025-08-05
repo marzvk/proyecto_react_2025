@@ -12,28 +12,32 @@ import Layout from "./components/Layout.tsx";
 import CategoriaPage from "./pages/CategoriaPage.tsx";
 import BusquedaPage from "./pages/BusquedaPage.tsx";
 import Success from "./pages/Success.tsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const queryClient = new QueryClient()
 
 // App va con mayuscula, el llamado App
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* provider permite manejar las rutas */}
-    <BrowserRouter>
-      <CarritoProvider>
-        {/* Switch de las rutas  */}
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<App />} />
-            <Route path="/products/:id" element={<CardDetail />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/carrito" element={<CarritoPage />} />
-            <Route path="/categoria/:nombre" element={<CategoriaPage />} />
-            <Route path="/busqueda" element={<BusquedaPage />} />
-            <Route path="/success" element={<Success/>} />
-          </Route>
-        </Routes>
-      </CarritoProvider>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <CarritoProvider>
+          {/* Switch de las rutas  */}
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<App />} />
+              <Route path="/products/:id" element={<CardDetail />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/carrito" element={<CarritoPage />} />
+              <Route path="/categoria/:nombre" element={<CategoriaPage />} />
+              <Route path="/busqueda" element={<BusquedaPage />} />
+              <Route path="/success" element={<Success />} />
+            </Route>
+          </Routes>
+        </CarritoProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
   </StrictMode>
 );
