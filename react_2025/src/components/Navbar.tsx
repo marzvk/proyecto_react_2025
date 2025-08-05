@@ -1,8 +1,9 @@
+import { Link } from "react-router";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
+import { useCarrito } from "../pages/Carrito";
 
 type NavbarProps = {
-  count: number;
   filter: string;
   onSearch: (value: string) => void;
   categoria: string[];
@@ -10,7 +11,8 @@ type NavbarProps = {
 
 }
 
-function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarProps) {
+function Navbar({ filter, onSearch, categoria, selecCategoria }: NavbarProps) {
+  const { carrito } = useCarrito();
 
   const [mostrarCategorias, setMostrarCategorias] = useState(false);
   const showCategoria = () => {
@@ -22,7 +24,7 @@ function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarPr
   return (
     <nav className={styles.naveg}>
       <div className={styles.superior}>
-        <img src="/logop.png" alt="" className={styles.logo} />
+        <Link to="/"><img src="/logop.png" alt="" className={styles.logo} /></Link>
         <input type="text"
           placeholder="Buscar"
           className={styles.buscador}
@@ -38,7 +40,7 @@ function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarPr
           </button>
 
           {mostrarCategorias && (
-            <ul >
+            <ul className={styles.categoryList}>
               {categoria.map((cat) => (
                 <li key={cat}>
                   <a
@@ -55,19 +57,14 @@ function Navbar({ count, filter, onSearch, categoria, selecCategoria }: NavbarPr
               ))}
             </ul>
           )}
-
-
         </li>
 
         <li className={styles.listText}>Ofertas</li>
         <li className={styles.listText}>Registrate</li>
         <li>
-          <img
-            className={styles.carrito}
-            src="/icons8-carrito-de-compras-50.png"
-            alt=""
-          />
-          <span className={styles.cantidad}>{count}</span>
+          <Link to="/carrito" className={styles.carrito}>
+            🛒 <span className={styles.contadorItems}>{carrito.length}</span>
+          </Link>
         </li>
       </ul>
     </nav>

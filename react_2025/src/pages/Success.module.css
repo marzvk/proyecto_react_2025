@@ -1,0 +1,143 @@
+
+
+
+
+
+.successContainer {
+  /* Contenedor principal de la página de éxito */
+  max-width: 600px;
+  margin: 60px auto; /* Centra el contenedor y da espacio vertical */
+  padding: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px; /* Bordes suaves */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada para destacar */
+  background-color: #f9f9f9; /* Fondo ligeramente gris para el contenedor */
+  text-align: center; /* Centra todo el texto dentro del contenedor */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea los elementos internos al centro */
+}
+
+.mainTitle {
+  /* Título principal de éxito */
+  font-size: 2.5em;
+  color: #28a745; /* Un verde vibrante para el éxito */
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.subTitle {
+  /* Subtítulo de agradecimiento */
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.totalText {
+  /* Texto del total */
+  font-size: 1.6em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.totalText b {
+  color: #000; /* Negro para el valor del total */
+  font-weight: bold;
+}
+
+.emailConfirmation {
+  /* Párrafo de confirmación por email */
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.buttonContainer {
+  /* Contenedor para los botones para separarlos y darles espacio */
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en líneas si no caben */
+  justify-content: center; /* Centra los botones */
+  gap: 20px; /* Espacio entre los botones */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.finalizarButton {
+  /* Estilo para el botón "FINALIZAR" */
+  display: inline-block;
+  background-color: #007bff; /* Azul para finalizar */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.finalizarButton:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.finalizarButton:active {
+  background-color: #004085;
+  transform: translateY(0);
+}
+
+.viewMoreProductsButton {
+  /* Estilo para el botón "VER MÁS PRODUCTOS" */
+  display: inline-block;
+  background-color: #6c757d; /* Gris para una acción secundaria */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.viewMoreProductsButton:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+.viewMoreProductsButton:active {
+  background-color: #495057;
+  transform: translateY(0);
+}
+
+/* Responsividad básica */
+@media (max-width: 768px) {
+  .successContainer {
+    margin: 30px 15px;
+    padding: 25px;
+  }
+
+  .mainTitle {
+    font-size: 2em;
+  }
+
+  .subTitle {
+    font-size: 1.5em;
+  }
+
+  .totalText {
+    font-size: 1.3em;
+  }
+
+  .buttonContainer {
+    flex-direction: column; /* Apila los botones en pantallas pequeñas */
+    gap: 15px;
+  }
+
+  .finalizarButton,
+  .viewMoreProductsButton {
+    width: 80%; /* Hace que los botones ocupen más ancho */
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}

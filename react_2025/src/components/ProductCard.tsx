@@ -1,7 +1,9 @@
+import { Link } from "react-router";
 import styles from "./ProductCard.module.css";
 
 
 export type ProductCardProps = {
+  id?: number;
   src: string;
   title: string;
   precio: number;
@@ -11,9 +13,8 @@ export type ProductCardProps = {
   ubicacion?: string;
   envio?: string;
   km?: number;
-  agregar?: () => void;
-  quitar?: () => void;
-  
+  agregar?: () => void;  
+
 };
 
 
@@ -21,6 +22,7 @@ export type ProductCardProps = {
 // parametro props tiene el type ProductCardProps
 function FrontShowElement(props: ProductCardProps) {
   const {
+    id,
     src,
     title,
     precio,
@@ -31,8 +33,8 @@ function FrontShowElement(props: ProductCardProps) {
     envio,
     km,
     agregar,
-    quitar,
     
+
   } = props;
 
   return (
@@ -48,16 +50,15 @@ function FrontShowElement(props: ProductCardProps) {
         {anio}
         {km !== undefined && ` | ${km.toLocaleString()} km`}
       </h5>
-      <div className={styles.botonera}>
-        <button className={styles.boton} onClick={quitar} >
-          -
-        </button>
+
+      <div className={styles.botonera}>        
         <p>Comprar</p>
         <button className={styles.boton} onClick={agregar}>
           +
         </button>
       </div>
-     
+      <Link to={`/products/${id}`}> <span className={styles.link} >Ver el Producto</span></Link>
+      
     </article>
   );
 }

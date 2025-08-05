@@ -17,9 +17,48 @@
   color: rgb(56, 156, 61);
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+
+
 .botonera {
-  display: flex;
-  align-items: center;     
-  justify-content: center; 
-                
+  display: flex;  
+  justify-content: center;     
+  align-items: center;  /* Vertically aligns them */
+  gap: 10px;             /* A little space between them */
+  margin-bottom: 10px;  /* Space below this section */
+}
+
+.botonera p {
+  font-size: 1em;       /* Standard text size */
+  color: #333;          /* Dark gray text */
+  margin: 0;
+}
+
+.boton {
+  background-color: #eee; /* Light gray background */
+  color: #333;            /* Dark gray text */
+  border: 1px solid #ccc; /* Subtle light gray border */
+  border-radius: 3px;     /* Slightly rounded corners */
+  padding: 5px 10px;      /* Simple padding */
+  font-size: 1em;       /* A bit larger for the "+" sign */
+  cursor: pointer;        /* Indicates it's clickable */
+}
+
+.boton:hover {
+  background-color: #ddd; /* Slightly darker gray on hover */
+}
+
+/* Styles for the "Ver producto" link */
+.link {
+  display: inline-block;  /* Allows padding and margin */
+  color: #007bff;         /* A standard blue for links */
+  text-decoration: none;  /* Removes underline */
+  padding: 5px 10px;      /* Simple padding */
+  border: 1px solid #007bff; /* A simple blue border */
+  border-radius: 3px;     /* Slightly rounded corners */
+  font-size: 0.95em;      /* Slightly smaller text for the link */
+}
+
+.link:hover {
+  color: #0056b3;         /* Darker blue text on hover */
+  border-color: #0056b3;  /* Darker blue border on hover */
 }
