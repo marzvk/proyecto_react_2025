@@ -1,11 +1,12 @@
 import "./App.css";
 import FrontShowElement from "../components/ProductCard.tsx";
 import ProductCardContainer from "../components/ProductCardContainer.tsx";
-import Respuesta from "../components/Response.tsx";
+// import Respuesta from "../components/Response.tsx";
 import { useCarrito } from "./Carrito.tsx";
+// @ts-ignore
 import { productService } from "../../data/service.js";
 import { useQuery } from "@tanstack/react-query";
-
+import type { Product } from "../components/Response.tsx";
 
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
   }
   const { data: products, isLoading, error } = useAllProducts();
 
-  if (isLoading) return <p>Cargando productos...</p>;
-  if (error) return <p>Error al cargar productos</p>;
+  if (isLoading) return <h1 style={{ color: 'black' }}>Cargando productos...</h1>;
+  if (error) return <h1 style={{ color: 'black' }}>Error al cargar productos</h1>;
 
 
   return (
@@ -45,16 +46,18 @@ function App() {
         <div className="ultima-visita">
 
           <ProductCardContainer title="Productos Destacados">
-            {products.slice(0, 6).map((prod) => (
+            {products.slice(0, 6).map((prod: Product) => (
 
               <FrontShowElement
                 key={prod.id}
-                title={prod.title}
-                src={prod.image}
-                precio={prod.price}
-                cuotas={prod.installments}
-                descuento={prod.discountPercentage}
-                anio={prod.year} />
+                // title={prod.title}
+                // image={prod.image}
+                // price={prod.price}
+                {...prod}
+
+                // descuento={prod.discount}
+
+                agregar={() => agregarAlCarrito(prod)} />
             ))
             }
           </ProductCardContainer>
@@ -89,31 +92,24 @@ function App() {
 
 
         <ProductCardContainer title="Productos Destacados">
-          {products.slice(6, 12).map((prod) => (
+          {products.slice(6, 12).map((prod: Product) => (
 
             <FrontShowElement
               key={prod.id}
-              title={prod.title}
-              src={prod.image}
-              precio={prod.price}
-              cuotas={prod.installments}
-              descuento={prod.discountPercentage}
-              anio={prod.year} />
+              {...prod}
+              agregar={() => agregarAlCarrito(prod)} />
           ))
           }
         </ProductCardContainer>
 
         <ProductCardContainer title="Productos Destacados">
-          {products.slice(12, 18).map((prod) => (
+          {products.slice(12, 18).map((prod: Product) => (
 
             <FrontShowElement
               key={prod.id}
-              title={prod.title}
-              src={prod.image}
-              precio={prod.price}
-              cuotas={prod.installments}
-              descuento={prod.discountPercentage}
-              anio={prod.year} />
+              {...prod}
+              agregar={() => agregarAlCarrito(prod)} />
+
           ))
           }
         </ProductCardContainer>

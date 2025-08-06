@@ -14,7 +14,7 @@ function Success() {
             <h1 className={styles.subTitle}
             >¡Gracias por tu compra!</h1>
             <h2 className={styles.totalText}
-            >El total fue de  <b>${totalPasado}</b>  </h2>
+            >El total fue de  <b>${totalPasado.toFixed(2)}</b>  </h2>
             <p className={styles.emailConfirmation}
             >Te hemos enviado un correo con los detalles de tu compra.</p>
             <div className={styles.buttonContainer}>
