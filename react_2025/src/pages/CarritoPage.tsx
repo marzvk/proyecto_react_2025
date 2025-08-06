@@ -1,5 +1,7 @@
 
-import { useCarrito } from "./Carrito";
+// import { useCarrito } from "./Carrito";
+// import { useCarrito } from "../context/CarritoProvider.tsx";
+import { useCarrito } from "../context/UseCarrito.tsx";
 import { Link } from "react-router";
 import type { Product } from "../components/Response";
 import styles from "./CarritoPage.module.css"; 

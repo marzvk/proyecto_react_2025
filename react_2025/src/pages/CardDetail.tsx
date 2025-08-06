@@ -1,10 +1,12 @@
 import { Link, useParams } from "react-router";
-import Respuesta from "../components/Response";
-import type { Product } from "../components/Response";
-import { useCarrito } from "./Carrito";
+// import Respuesta from "../components/Response";
+// import type { Product } from "../components/Response";
+// import { useCarrito } from "./Carrito";
+// import { useCarrito } from "../context/CarritoProvider.tsx";
+import { useCarrito } from "../context/UseCarrito.tsx";
 import styles from "./CardDetail.module.css";
 import { useQuery } from "@tanstack/react-query";
-// @ts-ignore
+// @ts-expect-error ooo
 import { productService } from "../../data/service.js";
 
 
@@ -86,7 +88,7 @@ export default function CardDetail() {
 
   if (isLoading) return <h1 style={{ color: 'black' }}>Cargando productos...</h1>;
   if (error) return <h1 style={{ color: 'black' }}>Error al cargar productos</h1>;
-  
+
   return (
     <div className={styles.detailContainer}>
       <Link to="/products" className={styles.backLink}>

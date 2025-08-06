@@ -2,8 +2,10 @@ import "./App.css";
 import FrontShowElement from "../components/ProductCard.tsx";
 import ProductCardContainer from "../components/ProductCardContainer.tsx";
 // import Respuesta from "../components/Response.tsx";
-import { useCarrito } from "./Carrito.tsx";
-// @ts-ignore
+// import { useCarrito } from "./Carrito.tsx";
+// import { useCarrito } from "../context/CarritoProvider.tsx";
+import { useCarrito } from "../context/UseCarrito.tsx";
+// @ts-expect-error ooo
 import { productService } from "../../data/service.js";
 import { useQuery } from "@tanstack/react-query";
 import type { Product } from "../components/Response.tsx";

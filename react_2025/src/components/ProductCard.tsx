@@ -32,7 +32,7 @@ function FrontShowElement(props: ProductCardProps) {
     image,
     title,
     price,
-    originalPrice,
+    // originalPrice,
     discount,
     brand,
     // cuotas = 0,

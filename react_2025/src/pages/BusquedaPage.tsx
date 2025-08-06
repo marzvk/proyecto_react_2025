@@ -4,7 +4,9 @@ import { Link, useSearchParams } from "react-router";
 import Respuesta from "../components/Response";
 import ProductCardContainer from "../components/ProductCardContainer";
 import FrontShowElement from "../components/ProductCard";
-import { useCarrito } from "./Carrito";
+// import { useCarrito } from "./Carrito";
+// import { useCarrito } from "../context/CarritoProvider.tsx";
+import { useCarrito } from "../context/UseCarrito.tsx";
 import styles from "../components/ProductCard.module.css";
 
 export default function BusquedaPage() {

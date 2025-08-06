@@ -1,12 +1,18 @@
 import { Link } from "react-router";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
-import { useCarrito } from "../pages/Carrito";
+// import { useCarrito } from "../pages/Carrito";
+import { useCarrito } from "../context/UseCarrito.tsx";
+
+type Category = {
+  id: string;
+  name: string;
+};
 
 type NavbarProps = {
   filter: string;
   onSearch: (value: string) => void;
-  categoria: string[];
+  categoria: Category[];
   selecCategoria: (categoria: string) => void;
 
 }
@@ -39,7 +45,7 @@ function Navbar({ filter, onSearch, categoria, selecCategoria }: NavbarProps) {
             Categorias
           </button>
 
-          {mostrarCategorias && (
+          {/* {mostrarCategorias && (
             <ul className={styles.categoryList}>
               {categoria.map((cat) => (
                 <li key={cat}>
@@ -53,6 +59,24 @@ function Navbar({ filter, onSearch, categoria, selecCategoria }: NavbarProps) {
                   >
                     {cat}
                   </a>
+                </li>
+              ))}
+            </ul>
+          )} */}
+          
+          {mostrarCategorias && (
+            <ul className={styles.categoryList}>
+              
+              {categoria.map((cat) => (
+                <li key={cat.id}>
+                  <button
+                    onClick={() => {
+                      selecCategoria(cat.id);
+                      setMostrarCategorias(false);
+                    }}
+                  >
+                    {cat.name}
+                  </button>
                 </li>
               ))}
             </ul>
