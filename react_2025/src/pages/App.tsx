@@ -9,10 +9,34 @@ import { useCarrito } from "../context/UseCarrito.tsx";
 import { productService } from "../../data/service.js";
 import { useQuery } from "@tanstack/react-query";
 import type { Product } from "../components/Response.tsx";
+import { useCrearProducto } from "../components/ProdForm.tsx";
+import { useState } from "react";
+
 
 
 function App() {
   const { agregarAlCarrito } = useCarrito();
+  const crearProductoMutation = useCrearProducto();
+  const [titulo, setTitulo] = useState('');
+
+  const handleSubmit = () => {
+    if (!titulo.trim()) return alert('Debe ingresar un título');
+
+    crearProductoMutation.mutate({
+      title: titulo,
+      description: 'Descripción por defecto',
+      price: 199,
+      categoria: 'ropa',
+      brand: 'MarcaX',
+      rating: { rate: 0, count: 0 },
+      inStock: true,
+      colors: ['black'],
+      prime: false,
+      id: Date.now(),
+    });
+
+    setTitulo('');
+  };
 
   function useAllProducts(options = {}) {
     return useQuery({
@@ -65,6 +89,18 @@ function App() {
           </ProductCardContainer>
         </div>
 
+        <div >
+          <h2>Crear producto simulado</h2>
+          <input
+            type="text"
+            placeholder="Título del producto"
+            value={titulo}
+            onChange={(e) => setTitulo(e.target.value)}
+            style={{ marginRight: '0.5rem' }}
+          />
+          <button onClick={handleSubmit}>Crear producto</button>
+        </div>
+        
 
         {/* <div>
           <h1>Productos</h1>
@@ -104,7 +140,7 @@ function App() {
           }
         </ProductCardContainer>
 
-        <ProductCardContainer title="Productos Destacados">
+        <ProductCardContainer title="Ofertas">
           {products.slice(12, 18).map((prod: Product) => (
 
             <FrontShowElement
