@@ -122,8 +122,6 @@ function App() {
               />
             ))}
           </ul>
-
-
         </div> */}
 
 
