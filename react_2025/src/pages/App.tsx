@@ -96,12 +96,11 @@ function App() {
         <div className={styless.section} >
           <h2>Crear producto simulado</h2>
           <div style={{ paddingBottom: '10px' }}>
-            <input
+            <input className={styles.input}
               type="text"
               placeholder="Título del producto"
               value={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
-              style={{ marginRight: '0.5rem' }}
+              onChange={(e) => setTitulo(e.target.value)}              
             />
             <button className={styles.boton} onClick={handleSubmit}>Crear producto</button>
           </div>

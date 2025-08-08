@@ -36,27 +36,28 @@ export default function BusquedaPage() {
 
   return (
     <>
-    <Link to="/products" ><span className={styles.boton} >Volver a Productos</span></Link>
+      <Link to="/products" ><span className={styles.boton}
+        style={{ marginTop: '10px', display: 'inline-block' }} >Volver a Productos</span></Link>
 
-    {query.trim() !== "" && (
-      
-      <ProductCardContainer title={`Resultados de búsqueda: "${query}"`}>
-      {productos.length > 0 ? (
-        productos.slice(0, 6).map((prod:Product) => (
-          <FrontShowElement
-            key={prod.id}
-            {...prod}
-            agregar={() => agregarAlCarrito(prod)}            
-          />
-        ))
-      ) : (
-        <p>No se encontraron productos.</p>
+      {query.trim() !== "" && (
+
+        <ProductCardContainer title={`Resultados de búsqueda: "${query}"`}>
+          {productos.length > 0 ? (
+            productos.slice(0, 6).map((prod: Product) => (
+              <FrontShowElement
+                key={prod.id}
+                {...prod}
+                agregar={() => agregarAlCarrito(prod)}
+              />
+            ))
+          ) : (
+            <p>No se encontraron productos.</p>
+          )}
+        </ProductCardContainer>
+
       )}
-    </ProductCardContainer>
 
-    )}
-    
     </>
-    
+
   );
 }
