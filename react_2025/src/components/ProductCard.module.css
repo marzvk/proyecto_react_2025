@@ -100,3 +100,10 @@
   border-color: #0056b3;
   /* Darker blue border on hover */
 }
+
+.contenedor-padre {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  
+}

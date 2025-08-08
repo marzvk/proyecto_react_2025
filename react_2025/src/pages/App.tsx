@@ -11,6 +11,8 @@ import { useQuery } from "@tanstack/react-query";
 import type { Product } from "../components/Response.tsx";
 import { useCrearProducto } from "../components/ProdForm.tsx";
 import { useState } from "react";
+import styles from "../components/ProductCard.module.css";
+import styless from "../components/ProductCardContainer.module.css";
 
 
 
@@ -36,6 +38,7 @@ function App() {
     });
 
     setTitulo('');
+    alert('Producto creado con éxito');
   };
 
   function useAllProducts(options = {}) {
@@ -89,18 +92,21 @@ function App() {
           </ProductCardContainer>
         </div>
 
-        <div >
+
+        <div className={styless.section} >
           <h2>Crear producto simulado</h2>
-          <input
-            type="text"
-            placeholder="Título del producto"
-            value={titulo}
-            onChange={(e) => setTitulo(e.target.value)}
-            style={{ marginRight: '0.5rem' }}
-          />
-          <button onClick={handleSubmit}>Crear producto</button>
+          <div style={{ paddingBottom: '10px' }}>
+            <input
+              type="text"
+              placeholder="Título del producto"
+              value={titulo}
+              onChange={(e) => setTitulo(e.target.value)}
+              style={{ marginRight: '0.5rem' }}
+            />
+            <button className={styles.boton} onClick={handleSubmit}>Crear producto</button>
+          </div>
         </div>
-        
+
 
         {/* <div>
           <h1>Productos</h1>
