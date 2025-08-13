@@ -1,16 +1,43 @@
 export type Product = {
   id: number;
-  src: string;
+  src?: string ;
+  image?: string;
+  price?: number;
+  discount?: number;
   categoria: string;
   title: string;
-  precio: number;
+  precio?: number;  
   cuotas?: number;
   descuento?: number;
   anio?: string;
   ubicacion?: string;
   envio?: string;
   km?: number;
+  originalPrice?: number;
+  description?: string;
+  brand?: string;
+  colors?: string[];
+  rating?: {
+    rate: number;
+    count: number;
+  };
+  prime?: boolean;
+  inStock?: boolean;
 };
+
+// export type Product = {
+//   id: number;
+//   src: string;
+//   categoria: string;
+//   title: string;
+//   precio: number;
+//   cuotas?: number;
+//   descuento?: number;
+//   anio?: string;
+//   ubicacion?: string;
+//   envio?: string;
+//   km?: number;
+// };
 
 type Response = {
   categoryTitle: string;

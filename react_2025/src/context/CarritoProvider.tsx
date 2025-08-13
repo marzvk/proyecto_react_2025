@@ -45,10 +45,39 @@
 //   return context;
 // }
 
-export default function CarritoPage() {
+import { createContext, useState } from "react";
+import type { ReactNode } from "react";
+import type { Product } from "../components/Response";
+
+type CarritoContextType = {
+  carrito: Product[];
+  agregarAlCarrito: (producto: Product) => void;
+  quitarDelCarrito: (productoId: number) => void;
+  vaciarCarrito: () => void;
+};
+
+export const CarritoContext = createContext<CarritoContextType | undefined>(undefined);
+
+export function CarritoProvider({ children }: { children: ReactNode }) {
+  const [carrito, setCarrito] = useState<Product[]>([]);
+
+  const agregarAlCarrito = (producto: Product) => {
+    setCarrito((prev) => [...prev, producto]);
+  };
+
+  const quitarDelCarrito = (productoId: number) => {
+    setCarrito((prev) => prev.filter((item) => item.id !== productoId));
+  };
+
+  const vaciarCarrito = () => {
+    setCarrito([]);
+  };
+
   return (
-    <div>
-      <h1>Carrito</h1>
-    </div>
+    <CarritoContext.Provider
+      value={{ carrito, agregarAlCarrito, quitarDelCarrito, vaciarCarrito }}
+    >
+      {children}
+    </CarritoContext.Provider>
   );
 }

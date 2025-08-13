@@ -1,5 +1,7 @@
 
-import { useCarrito } from "./Carrito";
+// import { useCarrito } from "./Carrito";
+// import { useCarrito } from "../context/CarritoProvider.tsx";
+import { useCarrito } from "../context/UseCarrito.tsx";
 import { Link } from "react-router";
 import type { Product } from "../components/Response";
 import styles from "./CarritoPage.module.css"; 
@@ -9,7 +11,7 @@ import styles from "./CarritoPage.module.css";
 export default function CarritoPage() {
     const { carrito, quitarDelCarrito, vaciarCarrito } = useCarrito();
 
-    const total = carrito.reduce((acc, prod) => acc + prod.precio, 0);
+    const total = carrito.reduce((acc, prod) => acc + (prod.price ?? 0), 0);
 
     //  <Record<Clave, Valor>> tipo de objeto con claves y valores específicos(
     //   id:number, producto: Product, cantidad: number)
@@ -43,7 +45,7 @@ export default function CarritoPage() {
                         {Object.values(productosAgrupados).map(({ producto, cantidad }) => (
                             <li key={producto.id}
                                 className={styles.productItem}>
-                                {producto.title} x {cantidad} — ${producto.precio * cantidad}
+                                {producto.title} <b>Cantidad:{cantidad}</b>  &emsp; <b>${(producto.price ?? 0) * cantidad}</b>
                                 <button
                                     onClick={() => quitarDelCarrito(producto.id)}
                                     className={styles.removeButton}
@@ -55,7 +57,7 @@ export default function CarritoPage() {
                         onClick={vaciarCarrito}
                         className={styles.clearCartButton}
                     >🗑 Vaciar carrito</button>
-                    <h3 className={styles.totalText}>Total: ${total}</h3>
+                    <h3 className={styles.totalText}>Total: ${total.toFixed(2)}</h3>
                   
                 </>
             )}

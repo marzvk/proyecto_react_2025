@@ -2,9 +2,24 @@
   border-radius: 8px;
 }
 
+/* .titulo {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 16px;
+} */
 .titulo {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
+  line-height: 1.2;
+  /* Altura de línea clara */
+  height: 2.4em;
+  /* 2 líneas exactas (1.2 * 2) */
+  overflow: hidden;
+  /* Oculta el texto que exceda */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Muestra máximo 2 líneas */
+  -webkit-box-orient: vertical;
 }
 
 .img {
@@ -12,6 +27,7 @@
   height: 195px;
   object-fit: cover;
 }
+
 .envio,
 .desc {
   color: rgb(56, 156, 61);
@@ -20,45 +36,88 @@
 
 
 .botonera {
-  display: flex;  
-  justify-content: center;     
-  align-items: center;  /* Vertically aligns them */
-  gap: 10px;             /* A little space between them */
-  margin-bottom: 10px;  /* Space below this section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Vertically aligns them */
+  gap: 10px;
+  /* A little space between them */
+  margin-bottom: 10px;
+  /* Space below this section */
 }
 
 .botonera p {
-  font-size: 1em;       /* Standard text size */
-  color: #333;          /* Dark gray text */
+  font-size: 1em;
+  /* Standard text size */
+  color: #333;
+  /* Dark gray text */
   margin: 0;
 }
 
 .boton {
-  background-color: #eee; /* Light gray background */
-  color: #333;            /* Dark gray text */
-  border: 1px solid #ccc; /* Subtle light gray border */
-  border-radius: 3px;     /* Slightly rounded corners */
-  padding: 5px 10px;      /* Simple padding */
-  font-size: 1em;       /* A bit larger for the "+" sign */
-  cursor: pointer;        /* Indicates it's clickable */
+  background-color: #eee;
+  /* Light gray background */
+  color: #333;
+  /* Dark gray text */
+  border: 1px solid #ccc;
+  /* Subtle light gray border */
+  border-radius: 3px;
+  /* Slightly rounded corners */
+  padding: 5px 10px;
+  /* Simple padding */
+  font-size: 1em;
+  /* A bit larger for the "+" sign */
+  cursor: pointer;
+  /* Indicates it's clickable */
 }
 
 .boton:hover {
-  background-color: #ddd; /* Slightly darker gray on hover */
+  background-color: #ddd;
+  /* Slightly darker gray on hover */
 }
 
 /* Styles for the "Ver producto" link */
 .link {
-  display: inline-block;  /* Allows padding and margin */
-  color: #007bff;         /* A standard blue for links */
-  text-decoration: none;  /* Removes underline */
-  padding: 5px 10px;      /* Simple padding */
-  border: 1px solid #007bff; /* A simple blue border */
-  border-radius: 3px;     /* Slightly rounded corners */
-  font-size: 0.95em;      /* Slightly smaller text for the link */
+  display: inline-block;
+  /* Allows padding and margin */
+  color: #007bff;
+  /* A standard blue for links */
+  text-decoration: none;
+  /* Removes underline */
+  padding: 5px 10px;
+  /* Simple padding */
+  border: 1px solid #007bff;
+  /* A simple blue border */
+  border-radius: 3px;
+  /* Slightly rounded corners */
+  font-size: 0.95em;
+  /* Slightly smaller text for the link */
 }
 
 .link:hover {
-  color: #0056b3;         /* Darker blue text on hover */
-  border-color: #0056b3;  /* Darker blue border on hover */
+  color: #0056b3;
+  /* Darker blue text on hover */
+  border-color: #0056b3;
+  /* Darker blue border on hover */
+}
+
+.contenedor-padre {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  
+}
+
+.input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
